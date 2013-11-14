@@ -1,0 +1,103 @@
+%
+%  beamer_template
+%
+%  Created by Christopher Schommer-Pries on 2012-02-16.
+%  Copyright (c) 2012. All rights reserved.
+%
+
+
+\documentclass{beamer}		%% The Beamer document class formats for slides. 
+
+\usepackage{presentation}
+
+\title{Billiards}
+\author{Jonathan Allen, John Wang}
+\institute[MIT]{Massachusetts Institute of Technology}
+\date{November $22^\text{nd}$, 2013}
+
+\begin{document}
+
+\graphicspath{ {figures/} }
+
+\frame{
+
+\titlepage
+
+}
+
+\input{introduction.tex}
+
+\input{lemmas.tex}
+
+\input{algorithm.tex}
+
+\input{future_research.tex}
+
+
+
+\frame{
+This is a slide!
+}
+
+
+\frame{
+\frametitle{This slide has a title!}
+
+\pause
+Wow!
+\pause
+
+You can also make lists...
+\begin{itemize}
+	\item with an item \pause
+	\item and another item.
+\end{itemize}
+
+}
+
+
+\frame{
+You can typeset equations just as in latex:
+\[
+\int_0^1 x\, dx = 1/2,
+\]
+or
+$$
+\sum_{i = 1}^\infty i = -\frac{1}{12}
+$$
+or
+\begin{equation*}
+1 - 1 + 1 - \cdots = \frac{1}{2}.
+\end{equation*}
+
+}
+
+
+\frame{
+If you want a number for an equation, do it like this:
+\begin{equation}\label{eq:first-equation}
+\lim_{n \to \infty}\, \sum_{k = 1}^n \frac{1}{k^2} = \frac{\pi}{6}.
+\end{equation} %
+This can then be referred to as \eqref{eq:first-equation}, which is much easier than
+keeping track of numbers by hand. To group several equations, aligning on the $=$ sign, do
+it like this:
+\begin{align*}
+x_1 + 2x_2 + 3x_3 &= 7 \\ y &= mx + c \\ &= 4x - 9.
+\end{align*}
+}
+
+\frame{
+\begin{theorem}[my great theorem]
+	This theorem proves everything.
+\end{theorem}
+
+\begin{example}
+	For example it proves \alert{this}! % "alert" makes it red
+\end{example}
+
+}
+
+
+
+\end{document}
+
