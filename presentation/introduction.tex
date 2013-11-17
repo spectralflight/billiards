@@ -4,7 +4,7 @@
   \begin{itemize}
     \item Billiard ball bouncing in a square
     \item Assume no gravity or friction
-    \item Examine sequence of sides
+    \item Examine sequence of side collisions
   \end{itemize}
 }
 
@@ -18,7 +18,7 @@
   \end{example}
 
   \begin{figure}
-    \includegraphics[width=3in]{figures/abab.pdf}
+    \includegraphics[width=3in]{abab.pdf}
   \end{figure}
 }
 
@@ -30,7 +30,7 @@
   \end{example}
 
   \begin{figure}
-    \includegraphics[width=3in]{figures/aaabaaab.pdf}
+    \includegraphics[width=3in]{aaabaaab.pdf}
   \end{figure}
 }
 
@@ -51,33 +51,37 @@
   \end{definition}
 
   \begin{figure}
-    \includegraphics[width=2in]{figures/particle_collision.png}
+    \includegraphics[width=2in]{particle_collision.png}
   \end{figure}
 }
 
 \frame{
   \frametitle{Notation}
   \begin{definition}
-    Opposite sides of the table are named $a$ and $b$. Primary side (most collisions) is $a$, secondary side is $b$.
+    Opposite sides of the table are named $a$ and $b$. \textbf{Primary side} (most collisions) is $a$, \textbf{secondary side} is $b$.
   \end{definition}
 
   \begin{figure}
-    \includegraphics[width=2in]{figures/square_with_sides.png}
+    \includegraphics[width=2in]{square_with_sides.png}
   \end{figure}
 }
 
 \frame{
   \frametitle{Notation}
   \begin{definition}
-    Collision string consists of the sides of the table that have been collided with for a given starting position and velocity.
+    \textbf{Collision string} consists of the sides of the table that have been collided with for a given starting position and velocity.
   \end{definition}
+
+  \pause
 
   \begin{definition}
-    Primary substring is a subsequence from the collision string which contains the primary side collisions that occur between consecutive secondary side collisions.
+    \textbf{Primary substring} is a subsequence from the collision string which contains the primary side collisions that occur between consecutive secondary side collisions.
   \end{definition}
 
+  \pause
+
   \begin{example}
-    Collision string: `aabaaabaabaaab`, Primary substrings: `aa`, `aaa`
+    \textbf{Collision string}: `aabaaabaabaaab`, \textbf{Primary substrings}: `aa`, `aaa`
   \end{example}
 }
 
