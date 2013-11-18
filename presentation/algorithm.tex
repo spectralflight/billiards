@@ -1,0 +1,38 @@
+\subsection{Sequence Characterization}
+
+\frame{
+  \frametitle{Sequence Characterization}
+
+  \begin{multline*}
+    \begin{array}{cccccccccc}
+      \underbrace{aaa} & b & \underbrace{aa} & b & \underbrace{aa} & b & \underbrace{aaa} & b & \underbrace{aa} & b \\
+      3 && 2 && 2 && 3 && 2 &
+    \end{array}\\
+    \begin{array}{cccccccc}
+      \underbrace{aa} & b & \underbrace{aaa} & b & \underbrace{aa} & b & \underbrace{aaa} & \dots \\
+      2 && 3 && 2 && 3 & \dots
+    \end{array}
+  \end{multline*}
+}
+
+\frame{
+  \frametitle{Sequence Characterization}
+
+  \begin{gather*}
+    \begin{array}{cccccccc}
+      3 & \underbrace{22} & 3 & \underbrace{22} & 3 & \underbrace{2} & 3 & \dots\\ 
+      & 2 && 2 && 1 & \dots
+    \end{array}
+  \end{gather*}
+}
+
+\subsection{Algorithm}
+
+\frame{
+  \frametitle{Algorithm}
+
+  \begin{align*}
+    dx_n& = \bigcap_{i=0}^n \left( \frac{i}{1 + \sum_{j=0}^i n_j}, \frac{1}{-1 + \sum_{j=0}^i n_j} \right)\\
+    \delta_n& = \bigcap_{i=0}^n \left( i-dx_{n, max} (1 + \sum_{j=0}^i n_j), i-dx_{n, min} (1 + \sum_{j=0}^i n_j) \right)
+  \end{align*}
+}
