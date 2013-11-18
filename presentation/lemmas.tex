@@ -206,7 +206,7 @@
 
   Length of primary substring $i$ is given by:
   \begin{eqnarray*}
-    L(i, m, y_0) = \floor{\frac{i - y_0}{m}} - \floor{\frac{i-1 - y_0}{m}}
+    L(i, m, y_0) = \floor*{\frac{i - y_0}{m}} - \floor*{\frac{i-1 - y_0}{m}}
   \end{eqnarray*}
 }
 
@@ -225,24 +225,24 @@
 
   \begin{lemma}
     \begin{eqnarray*}
-      \floor{a - x} + \floor{b - x} = \floor{a} - \floor{b} + (\floor{\fracp{a} - \fracp{x}} - \floor{\fracp{b} - \fracp{x}})
+      \floor*{a - x} + \floor*{b - x} = \floor*{a} - \floor*{b} + (\floor*{\fracp*{a} - \fracp*{x}} - \floor*{\fracp*{b} - \fracp*{x}})
     \end{eqnarray*}
   \end{lemma}
 
   \begin{eqnarray*}
-  L(i, m, y_0) - L(j, m, y_0) &=& \left( \floor{\frac{i}{m}} - \floor{\frac{i-1}{m}} \right) + \left( \floor{\frac{j}{m}} - \floor{\frac{j-1}{m}} \right) \\
-                              &+& \left( \floor{\fracp{\frac{i}{m}} - \fracp{\frac{y_0}{m}}} - \floor{\fracp{\frac{i-1}{m}} - \fracp{\frac{y_0}{m}}} \right) \\
-                              &-& \left( \floor{\fracp{\frac{j}{m}} - \fracp{\frac{y_0}{m}}} - \floor{\fracp{\frac{j-1}{m}} - \fracp{\frac{y_0}{m}}} \right) 
+  L(i, m, y_0) - L(j, m, y_0) &=& \left( \floor*{\frac{i}{m}} - \floor*{\frac{i-1}{m}} \right) + \left( \floor*{\frac{j}{m}} - \floor*{\frac{j-1}{m}} \right) \\
+                              &+& \left( \floor*{\fracp*{\frac{i}{m}} - \fracp*{\frac{y_0}{m}}} - \floor*{\fracp*{\frac{i-1}{m}} - \fracp*{\frac{y_0}{m}}} \right) \\
+                              &-& \left( \floor*{\fracp*{\frac{j}{m}} - \fracp*{\frac{y_0}{m}}} - \floor*{\fracp*{\frac{j-1}{m}} - \fracp*{\frac{y_0}{m}}} \right) 
   \end{eqnarray*}
 }
 
 \frame{
   \frametitle{Maximum Differences between Primary Substring Lengths}
 
-  Let $g(x, m, y_0) = \floor{\fracp{\frac{x}{m}} - \fracp{\frac{y_0}{m}}} - \floor{\fracp{\frac{x-1}{m}} - \fracp{\frac{y_0}{m}}}$.
+  Let $g(x, m, y_0) = \floor*{\fracp*{\frac{x}{m}} - \fracp*{\frac{y_0}{m}}} - \floor*{\fracp*{\frac{x-1}{m}} - \fracp*{\frac{y_0}{m}}}$.
 
   \begin{eqnarray*}
-  L(i,m,y_0) - L(j,m,y_0) &=& \fracp{\frac{i-1}{m}} - \fracp{\frac{i}{m}} - \left(\fracp{\frac{j-1}{m}} - \fracp{\frac{j}{m}} \right) \\
+  L(i,m,y_0) - L(j,m,y_0) &=& \fracp*{\frac{i-1}{m}} - \fracp*{\frac{i}{m}} - \left(\fracp*{\frac{j-1}{m}} - \fracp*{\frac{j}{m}} \right) \\
                           &+& g(i,m,y_0) - g(j,m,y_0)
   \end{eqnarray*}
 }
@@ -252,14 +252,14 @@
   \begin{itemize}
     \item If $g(x,m,y_0) = 1$, then:
       \begin{eqnarray*}
-        \fracp{\frac{x-1}{m}} < \fracp{\frac{y_0}{m}} < \fracp{\frac{x}{m}}
+        \fracp*{\frac{x-1}{m}} < \fracp*{\frac{y_0}{m}} < \fracp*{\frac{x}{m}}
       \end{eqnarray*}
 
       Which implies $0 < L(x,m,y_0) < 1$.
 
     \item If $g(x,m,y_0) = -1$, then:
       \begin{eqnarray*}
-        \fracp{\frac{x}{m}} < \fracp{\frac{y_0}{m}} < \fracp{\frac{x-1}{m}}
+        \fracp*{\frac{x}{m}} < \fracp*{\frac{y_0}{m}} < \fracp*{\frac{x-1}{m}}
       \end{eqnarray*}
 
       Which implies $-1 < L(x,m,y_0) < 0$.
