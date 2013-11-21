@@ -34,6 +34,19 @@
   \end{figure}
 }
 
+\subsection{Problem Statement}
+
+\frame{
+  \frametitle{Problem Statement}
+
+  Problem: Characterize the properties of collision sequences.
+
+  \begin{itemize}
+    \item Given a sequence of $a$'s and $b$'s, determine if it is a valid collision sequence.
+    \item Given a valid collision sequence, determine a possible starting position and velocity.
+  \end{itemize}
+}
+
 \subsection{Outline}
 
 \frame{
@@ -41,12 +54,12 @@
   \tableofcontents
 }
 
-\subsection{Notation and Problem Statement}
+\subsection{Basic Notation}
 
 \frame{
-  \frametitle{Notation}
+  \frametitle{Basic Notation}
   \begin{definition}
-    A table $T \in \R^2$ is the unit square. Opposite sides of the table are labeled $a$ and $b$.
+    A table $T \subset \R^2$ is the unit square. Vertical sides are labelled with a $v$. Horizontal sides are labelled with an $h$.
   \end{definition}
 
   \begin{figure}
@@ -58,7 +71,7 @@
   \frametitle{Notation}
 
   \begin{definition}
-     A ball $p \in T$ begins at position $\vec{r}_0 \in T$ with initial velocity $\vec{v}_0 \ne 0$. When the ball collides with an edge of the table, it reflects such that the component of its velocity normal to the edge is negated after the collision, and its component tangent to the edge is unchanged.
+     A ball $p \in T$ begins at position $\vec{r}_0 \in T$ with initial velocity $\vec{v}_0 \ne 0$. When the ball collides with an edge of the table, it reflects its angle with the table edge.
   \end{definition}
 
   \begin{figure}
@@ -66,37 +79,88 @@
   \end{figure}
 }
 
+\subsection{Primary and Secondary Sides}
+
+\frame{
+  \frametitle{Secondary Side Theorem}
+
+  \begin{theorem}
+    At least one side will never have more than one consecutive occurrence in a valid collision string.
+  \end{theorem}
+}
+
+\frame{
+  \frametitle{Secondary Side Theorem Examples}
+
+  \begin{example}
+    Valid: $vhhhvhhhv$
+  \end{example}
+
+  \begin{example}
+    Valid: $vhvhvhv$
+  \end{example}
+
+  \begin{example}
+    Valid: $vvvvvhvvvvhvvvvvhvvvv$
+  \end{example}
+
+  \begin{example}
+    Invalid: $vvhhhvvvhhhvvhhh$
+  \end{example}
+
+  \begin{example}
+    Invalid: $vhhhvvhvh$
+  \end{example}
+}
+
+\frame{
+  \frametitle{Secondary Side Theorem Proof}
+
+  \begin{itemize}
+    \item A billiard ball trajectory must be a line in the tiled grid with slope $m$.
+    \item Case 1: $m = 1$.
+    \item Case 2: $m < 1$ or $m > 1$.
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Secondary Side Theorem Proof}
+
+  If $m = 1$, $v$ and $h$ alternate.
+
+  % TODO: show a picture here
+}
+
+\frame{
+  \frametitle{Secondary Side Theorem Proof}
+
+  If $m < 1$, there must exist an $h$ between each $v$.
+
+  If $m > 1$, similar argument holds.
+
+  % TODO: show a picture of a single square in the lattice, 
+}
+
 \frame{
   \frametitle{Notation}
   \begin{definition}
-    \textbf{Collision string:} list of the sides of the table that a ball collides with, ordered by collision time. e.g. `abaaabaaaab'.
-
-    \textbf{Primary side}: side appearing most often in a collision string.
-
-    \textbf{Secondary side} the other side.
+    \textbf{Secondary side}: a side which never has more than one consecutive occurrences.
+    \textbf{Primary side}: a side which is not a secondary side.
   \end{definition}
 
   \pause
 
   \begin{definition}
-    \textbf{Primary substring:} a subsequence from the collision string which contains the primary side collisions that occur between consecutive secondary side collisions.
+    \textbf{Primary substring:} a subsequence from the collision string which contains a consecutive sequence of primary sides.
   \end{definition}
 
   \pause
 
   \begin{example}
-    \textbf{Collision string}: `aabaaabaabaaab`, \textbf{Primary substrings}: `aa`, `aaa`
+    \textbf{Collision string}: $vvhvvvhvvhvvvh$
+    \textbf{Secondary Side}: $h$
+    \textbf{Primary Side}: $v$
+    \textbf{Primary substrings}: $vv$, $vvv$
   \end{example}
-}
-
-\frame{
-  \frametitle{Problem Statement}
-
-  Problem: Characterize the properties of collision sequences.
-
-  \begin{itemize}
-    \item Given a sequence of $a$'s and $b$'s, determine if it is a valid collision sequence.
-    \item Given a valid collision sequence, determine a possible starting position and velocity.
-  \end{itemize}
 }
 
