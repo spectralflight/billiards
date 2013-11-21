@@ -126,11 +126,11 @@ def potential_periodic_sequence(sequence, potential_sequence):
 
 if __name__ == '__main__':
     square = Rectangle(0.0, 1.0, 0.0, 1.0)
-    velocity = VelocityVector(0.0015, 0.0005)
+    velocity = VelocityVector(0.0023, 0.0005)
     particle = Particle((0.25, 0.25), velocity)
 
     simulation = SquareSimulation(square, particle)
-    locations, inversions = simulation.run(15000)
+    locations, inversions = simulation.run(6000)
 
     print minimum_periodic_sequence(inversions)
     plot_locations(locations)
