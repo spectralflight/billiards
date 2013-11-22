@@ -2,13 +2,34 @@
 	\frametitle{Indexing Definitions}
 
 	\begin{description}
-		\item[$I(A, b)_k$:] index of k\textsuperscript{TH} $b$ in $A$
-		\item[$\beta_i$:] \# of v's between i\textsuperscript{TH} and (i+1)\textsuperscript{TH} collisions ($[I(\alpha, h)]_{i+1} - [I(\alpha, h)]_{i}$)
+		\item[$I(A, b)_k$:] index of k\textsuperscript{th} occurrence of b in A
+		\item[$\beta_i$:] $\#$ of v's between i\textsuperscript{th} and (i+1)\textsuperscript{th} h collisions: $[I(\alpha, h)]_{i+1} - [I(\alpha, h)]_{i}$
 	\end{description}
+}
+
+\frame{
+	\frametitle{First Indexing Theorem}
 
 	\begin{theorem}
 		\[
-			\beta_i \ge 1 \quad i \in \cbracket{0, \dotsc, length(I(\alpha, h))-2}
+			\beta_i \ge 1 \qquad \forall \; i \in \cbracket{0, \dotsc, length(I(\alpha, h))-2}
 		\]
 	\end{theorem}
+}
+
+\frame{
+	\frametitle{Parametric Representation}
+
+	\begin{align*}
+		x(t)& = x_0 + a \, t\\
+		y(t)& = y_0 + b \, t
+	\end{align*}
+
+	\pause
+
+	\begin{align*}
+		y_0 = 0\\
+		a = \frac{1}{m}\\
+		b = 1
+	\end{align*}
 }
