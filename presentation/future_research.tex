@@ -1,48 +1,30 @@
-\subsection{Tileable Polygons}
+\subsection{Cubes}
 
 \frame{
-  \frametitle{Extensions to Tileable Polygons}
+  \frametitle{Extensions to Cubes}
 
-  Other Tileable Polygons:
-
-  \begin{columns}
-    \begin{column}{0.45\textwidth}
-      \begin{figure}
-        \includegraphics[height=1.5in]{hexagon_tiling.png}
-        \caption{Regular Hexagons}
-      \end{figure}
-    \end{column}
-    \begin{column}{0.45\textwidth}
-      \begin{figure}
-        \includegraphics[height=1.5in]{triangle_tiling.png}
-        \caption{Equilateral Triangles}
-      \end{figure}
-    \end{column}
-  \end{columns}
-}
-
-\subsection{Non-Tileable Polygons}
-
-\frame{
-  \frametitle{Extensions to Non-Tileable Polygons}
   \begin{itemize}
-    \item Irregular triangles
-    \item Pentagons
-    \item Octagons
+    \item Assign $x$, $y$, and $z$ as the opposite pairs of faces of a cube.
+    \item Characterize sequences of $x$, $y$, and $z$ collisions.
   \end{itemize}
 }
 
-\subsection{Circles}
-
 \frame{
-  \frametitle{Extensions to Circles}
+  \frametitle{Intuition}
 
   \begin{itemize}
-    \item Characterize how particle bounces around circle
-    \item Analog to $a$, $b$ might be sequence of collision points as you move around circle.
+    \item Examine collisions in $xy$, $yz$, and $xz$ planes.
+    \item Movement in each plane is independent.
+    \item Combine $xy$, $yz$, and $xz$ collision sequences to get final sequence.
   \end{itemize}
+}
 
-  \begin{figure}
-    \includegraphics[width=2in]{circle_research.png}
-  \end{figure}
+\frame{
+  \frametitle{Example}
+
+  \begin{example}
+    $xy$ sequence: $xxyyxx$
+    $yz$ sequence: $zzyzyz$
+    $xz$ sequence: $xxzzzx$
+  \end{example}
 }
