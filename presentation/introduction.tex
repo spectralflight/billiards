@@ -20,18 +20,6 @@
   \end{figure}
 }
 
-\frame{
-  \frametitle{Notation}
-
-  \begin{definition}
-     A ball $p \in T$ begins at position $\vec{r}_0 \in T$ with initial velocity $\vec{v}_0 \ne 0$. When the ball collides with an edge of the table, it reflects its angle with the table edge.
-  \end{definition}
-
-  \begin{figure}
-    \includegraphics[height=1.5in]{particle_collision.png}
-  \end{figure}
-}
-
 \subsection{Example}
 
 \frame{
@@ -39,12 +27,9 @@
 
   \begin{figure}
     \includegraphics[width=3in]{example/example_1.png}
-    \caption{$\vec{r}_0 = (1/4, 1/4)$ and $\vec{v}_0 = (23, 5)$.}
   \end{figure}
-
-  \pause
   \begin{eqnarray}
-    vv
+    {\color{red}vv}
   \end{eqnarray}
 }
 
@@ -53,11 +38,9 @@
 
   \begin{figure}
     \includegraphics[width=3in]{example/example_2.png}
-    \caption{$\vec{r}_0 = (1/4, 1/4)$ and $\vec{v}_0 = (23, 5)$.}
   \end{figure}
-  \pause
   \begin{eqnarray}
-    vvvhv
+    vv{\color{red}vhv}
   \end{eqnarray}
 }
 \frame{
@@ -65,11 +48,9 @@
 
   \begin{figure}
     \includegraphics[width=3in]{example/example_3.png}
-    \caption{$\vec{r}_0 = (1/4, 1/4)$ and $\vec{v}_0 = (23, 5)$.}
   \end{figure}
-  \pause
   \begin{eqnarray}
-    vvvhvvvv
+    vvvhv{\color{red}vvv}
   \end{eqnarray}
 }
 
@@ -78,11 +59,9 @@
 
   \begin{figure}
     \includegraphics[width=3in]{example/example_4.png}
-    \caption{$\vec{r}_0 = (1/4, 1/4)$ and $\vec{v}_0 = (23, 5)$.}
   \end{figure}
-  \pause
   \begin{eqnarray}
-    vvvhvvvvvhv
+    vvvhvvvv{\color{red}vhv}
   \end{eqnarray}
 }
 
@@ -91,11 +70,9 @@
 
   \begin{figure}
     \includegraphics[width=3in]{example/example_5.png}
-    \caption{$\vec{r}_0 = (1/4, 1/4)$ and $\vec{v}_0 = (23, 5)$.}
   \end{figure}
-  \pause
   \begin{eqnarray}
-    vvvhvvvvvhvvv
+    vvvhvvvvvhv{\color{red}vv}
   \end{eqnarray}
 }
 
@@ -104,11 +81,9 @@
 
   \begin{figure}
     \includegraphics[width=3in]{example/example_6.png}
-    \caption{$\vec{r}_0 = (1/4, 1/4)$ and $\vec{v}_0 = (23, 5)$.}
   \end{figure}
-  \pause
   \begin{eqnarray}
-    vvvhvvvvvhvvvvhv
+    vvvhvvvvvhvvv{\color{red}vhv}
   \end{eqnarray}
 }
 
@@ -119,19 +94,6 @@
   \end{eqnarray}
 }
 
-\subsection{Problem Statement}
-
-\frame{
-  \frametitle{Problem Statement}
-
-  Problem: Characterize the properties of collision sequences.
-
-  \begin{itemize}
-    \item Given a sequence of $a$'s and $b$'s, determine if it is a valid collision sequence.
-    \item Given a valid collision sequence, determine a possible starting position and velocity.
-  \end{itemize}
-}
-
 \subsection{Outline}
 
 \frame{
@@ -139,6 +101,13 @@
   \tableofcontents
 }
 
+\subsection{Problem Statement}
+
+\frame{
+  \frametitle{Problem Statement}
+
+   Problem: Given a sequence of $v$ and $h$ collisions, determine if it is a valid collision sequence.
+}
 
 \subsection{Primary and Secondary Sides}
 
