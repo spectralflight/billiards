@@ -15,7 +15,25 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 
 
-
+% Define abs norm, paren, bracket, cbracket, and innerproduct
+\usepackage{mathtools}
+\DeclarePairedDelimiter\tempabs{\lvert}{\rvert}
+\DeclarePairedDelimiter\tempnorm{\lVert}{\rVert}
+\DeclarePairedDelimiter\tempinnerproduct{\langle}{\rangle}
+\DeclarePairedDelimiter\tempparen{(}{)}
+\DeclarePairedDelimiter\tempbracket{[}{]}
+\DeclarePairedDelimiter\tempcbracket{\{}{\}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+% Swap * functionality
+\makeatletter
+\def\abs{\@ifstar{\tempabs}{\tempabs*}}
+\def\norm{\@ifstar{\tempnorm}{\tempnorm*}}
+\def\innerproduct{\@ifstar{\tempinnerproduct}{\tempinnerproduct*}}
+\def\paren{\@ifstar{\tempparen}{\tempparen*}}
+\def\bracket{\@ifstar{\tempbracket}{\tempbracket*}}
+\def\cbracket{\@ifstar{\tempcbracket}{\tempcbracket*}}
+\makeatother
 
 
 \newcommand{\C}{\mathbb C} % blackboard math , for ``complex,'' etc
