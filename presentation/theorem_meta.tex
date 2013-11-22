@@ -1,8 +1,37 @@
 \frame{
+	\frametitle{More Sub-Sequences}
+	
+	\begin{multline*}
+		C_i^{(0)} \coloneqq [I(\beta, \beta_{min})]_{i+1} - [I(\beta, \beta_{min})]_{i}\\
+		\forall \; i \in \cbracket{0, \dotsc, length(I(\beta, \beta_{min}) - 2)}
+	\end{multline*}
+
+	\pause 
+
+	\begin{multline*}
+		C_i^{(j)} \coloneqq [I(C_i^{(j-1)}, C_{min}^{(j-1)})]_{i+1} - [I(C_i^{(j-1)}, C_{min}^{(j-1)})]_{i}\\
+		\forall \; i \in \cbracket{0, \dotsc, length(I(C_i^{(i-1)}, C_{min}^{(i-1)}) - 2)}, \\
+		j \in \cbracket{0, N-1}
+	\end{multline*}
+
+	where $N$ is defined s.t. 
+
+	\[
+		\begin{cases}
+			C^{(j)} \ne (1,) \quad \text{for} \; j < N-1\\
+			C^{(j)} = (1,) \quad \text{for} \; j = N
+		\end{cases}
+	\]
+}
+
+\frame{
 	\frametitle{Satisfiability Test (Fractal Version)}
 
-	\begin{align}
-		C_k^{(0)} \coloneqq [I(\beta, \beta_{min})]_{k+1} - [I(\beta, \beta_{min})]_{k} \qquad \forall \; k \in \\
-		C_k^{(i)} \coloneqq [I(C_k^{(i-1)}, C_{min}^{(i-1)})]_{k+1} - [I(C_k^{(i-1)}, C_{min}^{(i-1)})]_{k}
-	\end{align}
+	\begin{theorem}
+		A collision sequence is valid iff the following is true:
+
+		\begin{multline*}
+			\beta_{max} - \beta_{min} \le 1$ and $C_{max}^{(j)} - C_{min}^{(j)} \le 1 \qquad \forall \; j \in \cbracket{0, \dotsc, N-1}
+		\end{multline*}
+	\end{theorem}
 }
