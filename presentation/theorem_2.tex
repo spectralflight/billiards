@@ -1,13 +1,21 @@
 \frame{
 	\frametitle{Second Indexing Theorem}
 
+	\begin{description}
+		\item[$\beta_{max}$:] maximum $\beta$ value in $\alpha$: $\max_i \beta_i$\\
+		\item[$\beta_{min}$:] minimum $\beta$ value in $\alpha$: $\min_i \beta_i$
+	\end{description}
+
 	\begin{theorem}
-		\[
-			\abs{\beta_i - \beta_j} \le 1 \qquad \forall \; i, j \in \cbracket{0, \dotsc, length(\beta)-1}
-		\]
+		Every valid collision sequence has the following property
+
+		\[ \beta_{max} - \beta_{min} \le 1 \]
 	\end{theorem}
 
-	\pause
+}
+
+\frame{
+	\frametitle{Second Indexing Theorem}
 
 	\begin{example}
 		\begin{itemize}
@@ -20,12 +28,6 @@
 
 \frame{
 	\frametitle{Second Indexing Theorem}
-
-	\begin{theorem}
-		\[
-			\abs{\beta_i - \beta_j} \le 1 \qquad \forall \; i, j \in \cbracket{0, \dotsc, length(\beta)-1}
-		\]
-	\end{theorem}
 
 	\begin{example}
 		\begin{itemize}

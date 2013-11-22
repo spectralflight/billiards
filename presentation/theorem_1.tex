@@ -18,13 +18,21 @@
 \frame{
 	\frametitle{First Indexing Theorem}
 
+	\begin{description}
+		\item[$N_{h}$:] the number of h's in $\alpha$: $length(I(\alpha, h))$
+	\end{description}
+
 	\begin{theorem}
+		Every valid collision sequence has the following property
+
 		\[
-			\beta_i \ge 1 \qquad \forall \; i \in \cbracket{0, \dotsc, length(I(\alpha, h))-2}
+			\beta_i \ge 1 \qquad \forall \; i \in \cbracket{0, \dotsc, N_h-2}
 		\]
 	\end{theorem}
+}
 
-	\pause
+\frame{
+	\frametitle{First Indexing Theorem}
 
 	\begin{example}
 		\begin{itemize}
@@ -37,12 +45,6 @@
 
 \frame{
 	\frametitle{First Indexing Theorem}
-
-	\begin{theorem}
-		\[
-			\beta_i \ge 1 \qquad \forall \; i \in \cbracket{0, \dotsc, length(I(\alpha, h))-2}
-		\]
-	\end{theorem}
 
 	\begin{example}
 		\begin{itemize}

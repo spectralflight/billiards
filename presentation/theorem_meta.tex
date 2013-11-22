@@ -1,25 +1,31 @@
 \frame{
 	\frametitle{More Sub-Sequences}
-	
+
 	\begin{multline*}
 		C_i^{(0)} \coloneqq [I(\beta, \beta_{min})]_{i+1} - [I(\beta, \beta_{min})]_{i}\\
-		\forall \; i \in \cbracket{0, \dotsc, length(I(\beta, \beta_{min}) - 2)}
+		\forall \; i \in \cbracket{0, \dotsc, length(I(\beta, \beta_{min})-2)}
 	\end{multline*}
 
-	\pause 
+}
+
+\frame{
+	\frametitle{More Sub-Sequences}
+
+	\begin{description}
+		\item[$N_j$:] $length(I(C^{(j-1)}, C_{min}^{(j-1)}))$ 
+	\end{description}
 
 	\begin{multline*}
 		C_i^{(j)} \coloneqq [I(C_i^{(j-1)}, C_{min}^{(j-1)})]_{i+1} - [I(C_i^{(j-1)}, C_{min}^{(j-1)})]_{i}\\
-		\forall \; i \in \cbracket{0, \dotsc, length(I(C_i^{(i-1)}, C_{min}^{(i-1)}) - 2)}, \\
-		j \in \cbracket{0, N-1}
+		\forall \; i \in \cbracket{0, \dotsc, N_j-2}, \; \forall \; j \in \cbracket{0, N_C-1}
 	\end{multline*}
 
-	where $N$ is defined s.t. 
+	where $N_C$ is defined s.t. 
 
 	\[
 		\begin{cases}
-			C^{(j)} \ne (1,) \quad \text{for} \; j < N-1\\
-			C^{(j)} = (1,) \quad \text{for} \; j = N
+			C^{(j)} \ne (1,) \quad \text{for} \; j < N_C-1\\
+			C^{(j)} = (1,) \quad \text{for} \; j = N_C-1
 		\end{cases}
 	\]
 }
@@ -27,11 +33,18 @@
 \frame{
 	\frametitle{Satisfiability Test (Fractal Version)}
 
+	\begin{definition}
+		\begin{align}
+			C_{max}^{(j)}& \coloneqq \max_i C_i^{(j)}\\
+			C_{min}^{(j)}& \coloneqq \min_i C_i^{(j)}
+		\end{align}
+	\end{definition}
+
 	\begin{theorem}
 		A collision sequence is valid iff the following is true:
 
 		\begin{multline*}
-			\beta_{max} - \beta_{min} \le 1$ and $C_{max}^{(j)} - C_{min}^{(j)} \le 1 \qquad \forall \; j \in \cbracket{0, \dotsc, N-1}
+			\beta_{max} - \beta_{min} \le 1$ and $C_{max}^{(j)} - C_{min}^{(j)} \le 1 \qquad \forall \; j \in \cbracket{0, \dotsc, N_C-1}
 		\end{multline*}
 	\end{theorem}
 }
