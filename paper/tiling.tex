@@ -48,5 +48,7 @@ We can prove each of these observations in turn:
 
   It is also clear that the billiard ball cannot make a $v$-collision at time $t$ unless the combined trajectory $T$ intersects with an integer vertical line at time $t$ as well. Therefore, we see that $v$-collisions occur exactly when $T$ intersects with an integer vertical line.
 
-  The result is hat 
+  We know that $T$ traces a ray in the $xy$ plane by theorem \ref{theorem:straight-line}. By assumption, this ray starts in the unit square $[0,1]^2$ and has an angle between $0$ and $\pi/2$ with the horizontal. Thus, the first $v$-collision occurs when $T$ intersects $x = 1$, the second $v$-collision occurs when $T$ intersects $x = 2$, and the $k$th $v$-collision occurs when $T$ intersects $x = k$.
+
+  However, we know that the $k$th $v$-collision occurs at time $\kappa^v_{k}$ by definition, and that the $t_{v, k}$ is the time when $T$ intersects with $x = k$. Therefore, we see that $\kappa^v_{k} = t_{v, k}$.
 \end{proof}
