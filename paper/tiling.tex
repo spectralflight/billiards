@@ -23,17 +23,23 @@ A couple of interesting observations can be made:
 
 \begin{itemize}
   \item The combined trajectory $T = \{\tau(0, \kappa_1), \tau(\kappa_1, \kappa_2), \tau(\kappa_2, \kappa_3), \ldots \}$ of a ball creates a ray in the $xy$ plane.
-  \item $v$ collisions happen exactly when the combined trajectory $T$ intersects with the integer vertical lines $x = k$ where $k \in \mathrm{Z}$.
-  \item $h$ collisions happen exactly when the combined trajectory $T$ intersects with the integer horizontal lines $y = k$ where $k \in \mathrm{Z}$.
+  \item All $v$-collisions happen exactly when the combined trajectory $T$ intersects with the integer vertical lines $x = k$ where $k \in \mathrm{Z}$. The same can be said of $h$-collisions and integer horizontal lines $y = k$ for $k \in \mathrm{Z}$.
 \end{itemize}
 
-We can prove each of these observations in turn:
+We can formalize and prove each of these observations in turn:
 
 \begin{theorem}
   The combined trajectory $T = \{\tau(0, \kappa_1), \tau(\kappa_1, \kappa_2), \ldots\}$ of a billiard ball is a ray in the $xy$ plane under the tiling representation.
   \label{theorem:straight-line}
 \end{theorem}
 \begin{proof}
+  We need to show that all trajectories $\tau(0, \kappa_1), \tau(\kappa_1, \kappa_2), \ldots$ which constitute the combined trajectory lie on a single line. We know that trajectories $\tau(\kappa_i, \kappa_{i+1})$ are line segments because the velocity of the billiard ball only changes during a collision. Thus, we just need to show that each trajectory $\tau(\kappa_i, \kappa_{i+1})$ lies on the same line, i.e. that $\tau(\kappa_i, \kappa_{i+2})$ is a line segment for all $i \in \mathrm{Z}$.
+
+  We will show this by analyzing the change in trajectory at time $\kappa_i$. We know that at any time $t \in (\kappa_{i-1}, \kappa_i)$, the billiard ball will be on the line segment defined by the trajectory $\tau(\kappa_{i-1}, \kappa_i)$. This trajectory makes an angle $\theta$ with the edge $e_i$ which the billiard ball collides with at time $\kappa_i$. Moreover, we know that after colliding with $e_i$, the outgoing angle of the trajectory is equal to the incoming angle $\theta$ by our definition of collision.
+
+The velocity is reflected about the line perpendicular to $e_i$ at the point of collision, but the angle of the trajectory $\tau(\kappa_i, \kappa_{i+1})$ makes with $e_i$ remains the same. Thus, when square $s_{i}$ is reflected about $e_i$, the resulting trajectory in $s_{i+1}$ makes an angle of $\theta$ with $e_i$. Figure \ref{fig:straight-line-angle} shows this process graphically.
+
+It is clear that the angles that $\tau(\kappa_{i-1}, \kappa_i)$ and $\tau(\kappa_{i}, \kappa_{i+1}$ make with $e_i$ are both $\theta$. Since both of these trajectories are already line segments, we see that the union of the two trajectories is also a line segment because both trajectories lie on the same line. Thus, we see that all trajectories $\tau(\kappa_j, \kappa_{j+1})$ for all $j \in \mathrm{Z}$ lie on the same line, which completes the proof.
 \end{proof}
 
 \begin{theorem}
