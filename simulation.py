@@ -127,7 +127,7 @@ def potential_periodic_sequence(sequence, potential_sequence):
 if __name__ == '__main__':
     square = Rectangle(0.0, 1.0, 0.0, 1.0)
     velocity = VelocityVector(0.0023, 0.0005)
-    particle = Particle((0.25, 0.25), velocity)
+    particle = Particle((0.75, 0.75), velocity)
 
     simulation = SquareSimulation(square, particle)
     locations, inversions = simulation.run(6000)
