@@ -32,6 +32,8 @@
 \DeclarePairedDelimiter\tempparen{(}{)}
 \DeclarePairedDelimiter\tempbracket{[}{]}
 \DeclarePairedDelimiter\tempcbracket{\{}{\}}
+\DeclarePairedDelimiter\tempceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\tempfloor{\lfloor}{\rfloor}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 % Swap * functionality
@@ -42,6 +44,8 @@
 \def\paren{\@ifstar{\tempparen}{\tempparen*}}
 \def\bracket{\@ifstar{\tempbracket}{\tempbracket*}}
 \def\cbracket{\@ifstar{\tempcbracket}{\tempcbracket*}}
+\def\ceil{\@ifstar{\tempceil}{\tempceil*}}
+\def\floor{\@ifstar{\tempfloor}{\tempfloor*}}
 \makeatother
 
 % blackboard bold , for ``complex,'' etc
