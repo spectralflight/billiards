@@ -1,13 +1,15 @@
 %!TEX root = paper.tex
 
+\textbf{Note: There are more h's than v's: $m \ge 1$}
+
 Rather than looking at an explicit representation of lines in the plane, we can gain much more insight from looking at a parametric representation. To simplify our analysis, we will choose our time parameter such that v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = m$. The equation for a line $y(x) = m \, x + b$ is equivalent to the following parametric system
 
 \begin{align}\label{eq:parametric-line}
-	x(t) = t + x_0\\
-	y(t) = m \, t
+	x(t)& = \frac{1}{m} \, t + x_0\\
+	y(t)& = t
 \end{align}
 
-Now our v and h collisions in the 2-dimensional plane can be projected onto the 1-dimensional parametric representation.
+Now our v and h collisions in the 2-dimensional plane can be projected onto the 1-dimensional $t$ axis.
 
 \begin{figure}[H]
   \begin{center}
@@ -17,29 +19,14 @@ Now our v and h collisions in the 2-dimensional plane can be projected onto the 
   \caption{\label{fig:1d-projection} Projecting onto the parametric representation.}
 \end{figure}
 
-We will occasionally have to deal with some boundary conditions, and we will introduce some intermediate sequences which we will label as `augmented' and mark with a tilde. The boundary treatments are fairly pedantic and can be ignored if the reader is just interested in getting a general understanding of our solutions.
+\begin{lemma}\label{lemma:h-extension}
+	A sequence $\alpha$ is a valid collision sequence iff there exists at least one valid collision sequence containing $\alpha$ that starts and ends with an h.
+\end{lemma}
 
-All of our theorems in this section will rely on the lengths of various patterns in the original collision sequence. We will start off by looking at the lengths of subsequences of v collisions in the collision sequence. To make this accounting simpler, we need to define an augmented collision sequence.
-
-\begin{definition}
-	\textbf{augmented collision sequence ($\tilde{\alpha}$)} which consists of the original collision sequence with one h collision added to both ends of the sequence.
-\end{definition}
-
-Now we can count lengths of v collision substrings
+Because of Lemma \ref{lemma:h-extension}, we will confine ourselves to only looking at collision sequences that start and end with an h.
 
 \begin{definition}
-	\textbf{Augmented $\beta_i$:} number of v collisions between i\textsuperscript{th} and (i+1)\textsuperscript{th} h collisions in the augmented collision sequence
-\end{definition}
-
-\textbf{Still working on this part, not sure how best to deal with the boundary conditions...}
-
-The first and last numbers in the $\beta$ sequence were artificially created by augmenting our original collision sequence. These two numbers only give us a lower bound on the number of v collisions between h collisions, so we can safely discard them if 
-
-\begin{definition}
-	\begin{align}
-		\beta_{min} \coloneqq \min_i \beta_i\\
-		\beta_{max} \coloneqq \max_i \beta_i
-	\end{align}
+	Given a collision sequence $\alpha$, define a sequence $\beta$ where each element $\beta_i$ is the number of v collisions between the i\textsuperscript{th} and (i+1)\textsuperscript{th} h in $\alpha$.
 \end{definition}
 
 The $\beta$ sequence is much simpler to think of geometrically in terms of our parametric representation shown in Figure \ref{fig:1d-projection}. $\beta_i$ represents the number of v collision tick marks in between each h collision tick mark.
@@ -84,9 +71,7 @@ For an $m$ to exist that satisfies the above constraints, all numbers in the $\b
 
 \end{proof}
 
-\begin{definition}
-	\textbf{Augmented $C^{(0)}_i$:} 1 more than the number of occurrences of $\beta_{max}$ between i\textsuperscript{th} and (i+1)\textsuperscript{th} occurrence of $\beta_{min}$ in the $\beta$ sequence.
-\end{definition}
+From now on we will only consider collision sequences, where $\beta$ starts and ends with $\beta_min$.
 
 \begin{theorem}\label{thm:beta_i}
 	Define 
@@ -120,7 +105,11 @@ We can immediately notice that the $\delta^{(\beta)}$ sequence has the following
 		\end{align}
 \end{enumerate}
 
-Thus, if we plot the values of the $\delta^{(\beta)}$ sequence on a line, we notice something interesting: the plot looks very similar to our original plot of the collision sequence parameterized by $t$. 
+Thus, if we plot the values of the $\delta^{(\beta)}$ sequence on a line, we notice something interesting: the plot looks very similar to our original plot of the collision sequence parameterized by $t$.
+
+\begin{definition}
+	Define a the sequence $C^{(0)}$ where each element $C^{(0)}_i$ is 1 more than the number of occurrences of $\beta_{max}$ between the i\textsuperscript{th} and (i+1)\textsuperscript{th} occurrence of $\beta_{min}$ in the $\beta$ sequence.
+\end{definition} 
 
 \begin{theorem}
 	Define 
