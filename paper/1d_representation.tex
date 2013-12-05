@@ -1,6 +1,6 @@
 %!TEX root = paper.tex
 
-Rather than looking at an explicit representation of lines in the plane, we can gain much more insight from looking at a parametric representation. To simplify our analysis, we will choose our time parameter such that v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = \frac{1}{m}$. The equation for a line $y(x) = m \, x + b$ is equivalent to the following parametric system
+Rather than looking at an explicit representation of lines in the plane, we can gain much more insight from looking at a parametric representation. To simplify our analysis, we will choose our time parameter such that v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = m$. The equation for a line $y(x) = m \, x + b$ is equivalent to the following parametric system
 
 \begin{align}\label{eq:parametric-line}
 	x(t) = t + x_0\\
@@ -74,10 +74,10 @@ The $\beta$ sequence is much simpler to think of geometrically in terms of our p
 
 \begin{proof}
 
-From Equation \ref{eq:parametric-line}, v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = \frac{1}{m}$. Thus, the following must be true
+From Equation \ref{eq:parametric-line}, v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = m$. Thus, the following must be true
 
 \begin{equation}
-	\beta_i \in \paren{\floor{\frac{1}{m}}, \ceil{\frac{1}{m}}}
+	\beta_i \in \paren{\floor{m}, \ceil{m}}
 \end{equation}
 
 For an $m$ to exist that satisfies the above constraints, all numbers in the $\beta$ sequence can only differ by 1.
@@ -93,7 +93,7 @@ For an $m$ to exist that satisfies the above constraints, all numbers in the $\b
 	\begin{align}\label{delta_beta}
 			\delta^{(\beta)}_i \coloneqq \begin{cases}
 				x_0 \qquad &\text{if} \quad i = 0\\
-				i (\beta_{max} - \frac{1}{m}) \qquad &\text{otherwise}
+				i (\beta_{max} - m) \qquad &\text{otherwise}
 			\end{cases}
 	\end{align}
 
@@ -111,7 +111,7 @@ For an $m$ to exist that satisfies the above constraints, all numbers in the $\b
 We can immediately notice that the $\delta^{(\beta)}$ sequence has the following features:
 
 \begin{enumerate}
-	\item The $\delta^{(\beta)}$ sequence is increasing, because $\beta_{max} \ge \frac{1}{m}$
+	\item The $\delta^{(\beta)}$ sequence is increasing, because $\beta_{max} \ge m$
 	\item Combining Theorem \ref{thm:beta_exremum} and Equation \ref{eq:beta_i}, we get the following:
 
 		\begin{align}
@@ -127,7 +127,7 @@ Thus, if we plot the values of the $\delta^{(\beta)}$ sequence on a line, we not
 	\begin{align}\label{delta_c}
 			\delta^{(C^{(j)})}_i \coloneqq \begin{cases}
 				x_0 \qquad &\text{if} \quad i = 0\\
-				i (C^{(j)}_{max} - \frac{1}{m}) \qquad &\text{otherwise}
+				i (C^{(j)}_{max} - m) \qquad &\text{otherwise}
 			\end{cases}
 	\end{align}
 
