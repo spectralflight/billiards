@@ -1,3 +1,5 @@
+%!TEX root = paper.tex
+
 Rather than looking at an explicit representation of lines in the plane, we can gain much more insight from looking at a parametric representation. To simplify our analysis, we will choose our time parameter such that v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = \frac{1}{m}$. The equation for a line $y(x) = m \, x + b$ is equivalent to the following parametric system
 
 \begin{align}\label{eq:parametric-line}
@@ -34,10 +36,10 @@ Now we can count lengths of v collision substrings
 The first and last numbers in the $\beta$ sequence were artificially created by augmenting our original collision sequence. These two numbers only give us a lower bound on the number of v collisions between h collisions, so we can safely discard them if 
 
 \begin{definition}
-	\begin{align*}
+	\begin{align}
 		\beta_{min} \coloneqq \min_i \beta_i\\
 		\beta_{max} \coloneqq \max_i \beta_i
-	\end{align*}
+	\end{align}
 \end{definition}
 
 The $\beta$ sequence is much simpler to think of geometrically in terms of our parametric representation shown in Figure \ref{fig:1d-projection}. $\beta_i$ represents the number of v collision tick marks in between each h collision tick mark.
@@ -50,31 +52,33 @@ The $\beta$ sequence is much simpler to think of geometrically in terms of our p
   \caption{\label{fig:beta-sequence} The $\beta$ sequence.}
 \end{figure}
 
-\begin{lemma}
-	\[
+\begin{lemma}\label{lemma:beta_pos}
+	For every valid collision sequence, the following must be true
+
+	\begin{equation}
 		\beta_{min} > 0
-	\]
+	\end{equation}
 \end{lemma}
 
 \begin{proof}
 	TODO
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{thm:beta_exremum}
 	For every valid collision sequence, the following must be true
 	
-	\[
+	\begin{equation}
 		\beta_{max} - \beta_{min} \le 1
-	\]
+	\end{equation}
 \end{theorem}
 
 \begin{proof}
 
 From Equation \ref{eq:parametric-line}, v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = \frac{1}{m}$. Thus, the following must be true
 
-\[
+\begin{equation}
 	\beta_i \in \paren{\floor{\frac{1}{m}}, \ceil{\frac{1}{m}}}
-\]
+\end{equation}
 
 For an $m$ to exist that satisfies the above constraints, all numbers in the $\beta$ sequence can only differ by 1.
 
@@ -84,22 +88,68 @@ For an $m$ to exist that satisfies the above constraints, all numbers in the $\b
 	\textbf{Augmented $C^{(0)}_i$:} 1 more than the number of occurrences of $\beta_{max}$ between i\textsuperscript{th} and (i+1)\textsuperscript{th} occurrence of $\beta_{min}$ in the $\beta$ sequence.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{thm:beta_i}
 	Define 
-	\begin{align*}
-			\delta_i \coloneqq \begin{cases}
+	\begin{align}\label{delta_beta}
+			\delta^{(\beta)}_i \coloneqq \begin{cases}
 				x_0 \qquad &\text{if} \quad i = 0\\
-				i (\ceil{\frac{1}{m}} - \frac{1}{m}) \qquad &\text{otherwise}
+				i (\beta_{max} - \frac{1}{m}) \qquad &\text{otherwise}
 			\end{cases}
-	\end{align*}
+	\end{align}
 
 	Then the following is true for all valid collision sequences
 
-	\begin{align*}
-		\beta_i = \floor{\delta_i} + \beta_{max} - \floor{\delta_{i+1}}
-	\end{align*}
+	\begin{align}\label{eq:beta_i}
+		\beta_i = \floor{\delta^{(\beta)}_i} + \beta_{max} - \floor{\delta^{(\beta)}_{i+1}}
+	\end{align}
 \end{theorem}
 
 \begin{proof}
 	TODO...
+\end{proof}
+
+We can immediately notice that the $\delta^{(\beta)}$ sequence has the following features:
+
+\begin{enumerate}
+	\item The $\delta^{(\beta)}$ sequence is increasing, because $\beta_{max} \ge \frac{1}{m}$
+	\item Combining Theorem \ref{thm:beta_exremum} and Equation \ref{eq:beta_i}, we get the following:
+
+		\begin{align}
+			\floor{\delta^{(\beta)}_{i+1}} - \floor{\delta^{(\beta)}_{i+1}}& = \beta_{max} - \beta_{min}\\
+			& \le 1
+		\end{align}
+\end{enumerate}
+
+Thus, if we plot the values of the $\delta^{(\beta)}$ sequence on a line, we notice something interesting: the plot looks very similar to our original plot of the collision sequence parameterized by $t$. 
+
+\begin{theorem}
+	Define 
+	\begin{align}\label{delta_c}
+			\delta^{(C^{(j)})}_i \coloneqq \begin{cases}
+				x_0 \qquad &\text{if} \quad i = 0\\
+				i (C^{(j)}_{max} - \frac{1}{m}) \qquad &\text{otherwise}
+			\end{cases}
+	\end{align}
+
+	Then the following is true for all valid collision sequences
+
+	\begin{align}\label{eq:c_i}
+		C^{(j)}_i = \floor{\delta^{(C^{(j)})}_i} + C^{(j)}_{max} - \floor{\delta^{(C^{(j)})}_{i+1}}
+	\end{align}
+\end{theorem} 
+
+\begin{theorem}
+	Define the sequence $a$ as
+
+	\begin{align}
+		a_0& \coloneqq 1\\
+		a_1& \coloneqq \beta_{max} - m\\
+		a_i& \coloneqq C^{(i-2)} a_{i-1} - a_{i-2} \qquad \text{for} \quad i \ge 2
+	\end{align}
+
+	For every valid collision sequence, $a \to 0$
+\end{theorem}
+
+\begin{proof}
+
 \end{proof}
