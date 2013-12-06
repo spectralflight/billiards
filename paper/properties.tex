@@ -2,9 +2,21 @@ We will now use the tiling representation that we have developed to discover pro
 
 \begin{theorem}
   \label{theorem:periodicity}
-  There exists a $k \in \mathrm{N}$ such that $mk + y_0 \equiv y_0 \pmod{2}$ if and only if $m \in \mathrm{Q}$.
+  There exists a $k \in \mathrm{N}$ such that $y_0 \equiv mk + y_0 \pmod{2}$ if and only if $m \in \mathrm{Q}$.
 \end{theorem}
 \begin{proof}
+  Let us first show that if $m \in \mathrm{Q}$, then there exists a $k \in \mathrm{N}$ such that $y_0 \equiv mk + y_0 \pmod{2}$. We simply need to show that $0 \equiv mk \pmod{2}$ if $m \in \mathrm{Q}$. However, since we know $m \in \mathrm{Q}$, we can decompose it as follows $m = p/q$ where $p,q \in \mathrm{Z}$. Thus, we have $mk \pmod{2} \equiv \frac{pk}{q} \pmod{2}$. Now we can choose:
+  \begin{eqnarray}
+    k = \left\{\begin{array}{l c}
+      q & \textrm{if } p \pmod{2} \equiv 0 \\
+      2q & \textrm{if } p \pmod{2} \equiv 1
+    \end{array}\right.
+  \end{eqnarray}
+  In this way, we see that $0 \equiv \frac{pk}{q} \pmod{2}$, which proves the first half of the theorem.
+
+  Now let us show that if there exists a in $k \in \mathrm{N}$ such that $y_0 \equiv mk + y_0 \pmod[2}$, then $m \in \mathrm{Q}$. If such a $k$ exists, then we must have $0 \equiv mk \pmod{2}$, which means that $mk = 2q$ for some $q \in \mathrm{Z}$. This means $m = \frac{2q}{k}$. Now it is clear that $m \in \mathrm{Q}$ because both its numerator and denominator are integers.
 \end{proof}
 
 Theorem \ref{theorem:periodicity} shows that if $m \in \mathrm{Q}$, then the billiard ball will eventually return to it's original position $\bvec{x}_0$ with its original velocity $\bvec{v}_0$. Seeing why this is true is just a matter of using the tiling representation. We note that every second square in either the $x$ or $y$ direction is the same (because of the transitivity of reflection). Therefore, every second square will have a trajectory that exactly corresponds to the trajectory in the original square.
+
+Thus, if $y_0 \equiv mk + y_0 \pmod{2}$, then the $y$-intercept from one of the secondary squares is the same as the $y$-intercept from the original square. Since we know that the secondary squares have the same trajectories as in the original square, we see that the trajectory will have returned to its original position (since the velocity is the same). Thus, if $y_0 \equiv mk + y_0 \pmod{2}$, then we know that the billiard ball will return to its original position with its original velocity. Theorem \ref{theorem:periodicity} also shows that if $m$ is irrational, then the billiard ball will never return to its original position and velocity.
