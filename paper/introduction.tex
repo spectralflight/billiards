@@ -18,10 +18,10 @@ Now, we will label the horizontal sides of the table $h$ and the vertical sides 
 We will now define what this paper will be primarily interested in, a sequence of collisions:
 
 \begin{definition}
-  A \emph{collision sequence} ($\alpha$) is a sequence of $v$ and $h$ collisions which starts and ends with an $h$ collision for some ball $b$ with initial position $\bvec{x}_0$ and intial velocity $\bvec{v}_0$.
+  A \emph{collision sequence} ($\alpha$) for a ball $B$ is the sequence of $v$'s and $h$'s which appear as the ball collides with the walls of the billiard table.
 \end{definition}
 
-Notice that all non-trivial initial conditions for a billiard ball will result in infinitely many $h$-collisions. The only initial conditions for which this is not true are when the initial velocity is parallel to the horizontal ($\bvec{v}_0 = (1, 0)$) so that the ball bounces infinitely between the two vertical sides. The proof of this is trivial and should become clear once the tiling representation is presented, so we will omit it.
+Notice that all non-trivial initial conditions for a billiard ball will result in infinitely many $h$-collisions. The only initial conditions for which this is not true are when the initial velocity is parallel to the horizontal (for example when $\bvec{v}_0 = (1, 0)$) so that the ball bounces infinitely between the two vertical sides. The proof of this is trivial and should become clear once the tiling representation is presented, so we will omit it.
 
 Thus, it is perfectly reasonable to constrain a ball's collision sequence to begin and end with an $h$ collision, since one simply needs to extend the number of collisions one watches until the sequence of collisions begins and ends with an $h$-collision. This constraint will later make it easier to reason about properties of sequences.
 
@@ -34,7 +34,12 @@ To understand collision sequences better, we will provide an example. Consider a
   \caption{\label{fig:example}Example Billiard Ball Trajectory, $x_0 = (0.75, 0.75)$, $v_0 = (0.23, 0.05)$}
 \end{figure}
 
-We can see from the figure that the collisions that it makes, denoting a $v$-collision with a $v$ and an $h$-collision with an $h$, are $\{v, h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v\}$. A valid collision sequence given these initial conditions would start and end with an $h$ collision. A possible example would be:
+We can see from the figure that the collisions that it makes, denoting a $v$-collision with a $v$ and an $h$-collision with an $h$, are:
+\begin{eqnarray}
+(v, h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v)
+\end{eqnarray}
+
+A valid collision sequence given these initial conditions would start and end with an $h$ collision. A possible example would be:
 
 \begin{eqnarray}
   \alpha = hvvvvvhvvvvvh
