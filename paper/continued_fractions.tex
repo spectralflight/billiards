@@ -1,1 +1,24 @@
-Finally, we will show how collision sequences relate to continued fractions.
+Finally, we will show how collision sequences relate to continued fractions. Recall that a continued fraction is an expression of any real number as a sum of an integer part and the reciprical of another number. For example, $r \in \mathrm{R}$ can be represented as follows:
+
+\begin{eqnarray}
+r = k_1 + \frac{1}{k_2 + \frac{1}{k_3 + \cdots}} \\
+\end{eqnarray}
+
+Integers $k_1, k_2, \ldots$ are called quotients of the continued fraction. A real number $r$ can be expressed in its continued fraction form $r = [k_1, k_2, k_3, \ldots]$. The quotient $k_i$ is found by taking the reciprocal of the fractional part of $k_{i-1}$ (setting $k_0 = r$).
+
+If use the continued fraction representation for the slope $m$ of a combined trajectory for a billiard ball, then we have:
+
+\begin{eqnarray}
+m = \lfloor m \rfloor + \frac{1}{\lfloor 1 / \{m\} \rfloor + \frac{1}{\lfloor 1/\{1/\{m\}\} \rfloor + \cdots}}
+\end{eqnarray}
+
+Where the quotients are given by:
+\begin{eqnarray}
+  k_1 &=& \left\lfloor m \right\rfloor \\
+  k_2 &=& \left\lfloor \frac{1}{\{m\}} \right\rfloor \\
+  k_3 &=& \left\lfloor \frac{1}{\left\{ \frac{1}{\{m\}} \right\}} \right\rfloor \\
+  k_4 &=& \left\lfloor \frac{1}{\left\{ \frac{1}{\left\{\frac{1}{\{m\}}\right\}} \right\}} \right\rfloor \\
+      &\vdots& \\
+\end{eqnarray}
+
+We see that the quotients are given by the recursive formula: $k_j = \left\lfloor \frac{1}{m - k_{j-1}} \right\rfloor$.
