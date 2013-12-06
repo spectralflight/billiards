@@ -26,5 +26,10 @@ We see that the quotients are given by the recursive formula: $k_j = \left\lfloo
 \begin{theorem}
   Given the continued fraction representation $m = [k_1, k_2, k_3, \ldots]$ for the slope $m \in \mathrm{R}$ of the combined trajectory $T$ of a billiard ball, we must have $k_j = \beta_{min}^{(j)}$.
 \end{theorem}
+\begin{proof}
+  We will proceed by induction. This is clearly true for $k_1 = \lfloor m \rfloor$ by lemma \ref{lem:interval-ticks}, since for $\beta_{min}^{(j)}$ the spacing of the larger tick marks are $m$ and the spacing of the smaller tick marks is $1$.
+
+  Now suppose we have shown our hypothesis to be true for $k_{j-1}$. This means that $\beta_{min}^{(j-1)} = k_{j-1}$. By definition \ref{def:beta-definition} (of the sequence $\beta^{(j)}$), we see that $\beta_i^{(j)}$ is one more than the number of occurrences of $\beta^{(j-1)}_{max}$ between the $i$th and $(i+1)$st occurrence of $\beta^{(j-1)}_{min}$ in the $\beta^{(j-1)}$ sequence.
+\end{proof}
 
 In fact, one can see that the process of finding $\beta^{(j)}_i$ for the $\beta^{(j)}$ subproblems exactly mirrors the process of finding the quotients $k_j$ in a continued fraction of $m$.

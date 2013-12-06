@@ -19,6 +19,7 @@ Graphically, $\beta^{(0)}_i$ represents the number of tick marks in each interva
 We will the rest of the sequences in the $\beta$ group inductively.
 
 \begin{definition}
+  \label{def:beta-definition}
   Given a $j > 0$ and a collision sequence $\alpha$, assume that $\beta^{(j-1)}$ is defined and each element in the sequence is either $\beta^{(j-1)}_{min}$ or $\beta^{(j-1)}_{max}$. The sequence $\beta^{(j)}$ is defined such that each element $\beta^{(j)}_i$ is 1 more than the number of occurrences of $\beta^{(j-1)}_{max}$ between the $i^{th}$ and $(i+1)^{th}$ occurrence of $\beta^{(j-1)}_{min}$ in the $\beta^{(j-1)}$ sequence. From Lemma \ref{lem:interval-ticks}, each element in $\beta^{(j)}$ can be one of two different values, which we will refer to as $\beta^{(j)}_{min}, \beta^{(j)}_{max}$.
 
 	If, for some $j_f$, the length of $\beta^{(j_f-1)}$ is 1, then $\beta^{(j_f-1)}$ is called the terminating $\beta$ sequence, and all subsequent $\beta^{(j)}$ for $j \ge j_f$ are undefined.
