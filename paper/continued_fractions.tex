@@ -21,4 +21,10 @@ Where the quotients are given by:
       &\vdots& \\
 \end{eqnarray}
 
-We see that the quotients are given by the recursive formula: $k_j = \left\lfloor \frac{1}{m - k_{j-1}} \right\rfloor$.
+We see that the quotients are given by the recursive formula: $k_j = \left\lfloor \frac{1}{m - k_{j-1}} \right\rfloor$. In fact, a more interesting observation is that the sequence of quotients $k_j$ form exactly the sequence of the minimum number of tick marks in each $\beta^{(j)}$ subproblem:
+
+\begin{theorem}
+  Given the continued fraction representation $m = [k_1, k_2, k_3, \ldots]$ for the slope $m \in \mathrm{R}$ of the combined trajectory $T$ of a billiard ball, we must have $k_j = \beta_{min}^{(j)}$.
+\end{theorem}
+
+In fact, one can see that the process of finding $\beta^{(j)}_i$ for the $\beta^{(j)}$ subproblems exactly mirrors the process of finding the quotients $k_j$ in a continued fraction of $m$.
