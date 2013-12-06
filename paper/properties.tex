@@ -25,7 +25,7 @@ We can also examine consecutive occurences of $v$ and $h$. For example, can we h
 
 \begin{theorem}
   \label{theorem:consecutive-collisions}
-  A collision sequence cannot have consecutive occurrences of $v$ and consecutive occurences of $h$.
+  A valid collision sequence cannot have consecutive occurrences of $v$ and consecutive occurences of $h$.
 \end{theorem}
 \begin{proof}
   We have already shown in theorem \ref{theorem:straight-line} that the combined trajectory of a billiard ball must be a ray. This ray must lie on some line with some slope $m \in \mathrm{R}$ or with undefined slope (when the line is vertical). When the line is vertical, it is clear that the theorem holds, because only $v$ collisions occur. 
@@ -35,4 +35,6 @@ We can also examine consecutive occurences of $v$ and $h$. For example, can we h
   If $|m| < 1$, then the number of $h$-collisions between the $y$th and $y+1$st $v$-collisions will be $\lfloor x(y+1) - x(y) \rfloor = \lfloor (y + 1 - y_0)/m - (y - y_0)/m \rfloor = \lfloor 1/m \rfloor > 1$. This shows that there will be at least 1 $h$-collision between the $y$th and $y+1$st $v$-collisions for all $y \in \mathrm{N}$. This completes the theorem.
 \end{proof}
 
+We therefore see that if $v$ occurs consecutively in a collisions sequence, then $h$ cannot occur consecutively and vice versa. For example, the sequence $hvvhh$ has two consecutive occurrences of $v$ and two consecutive occurrences of $h$, so it cannot be a valid collision sequence. However, the sequence $hvvhvvvh$ does not have consecutive occurrences of $h$, so theorem \ref{theorem:consecutive-collisions} does not rule it out as a valid collision sequence.
 
+Theorem \ref{theorem:consecutive-collisions} allows us to make a simplification for our collision sequences. Since one of either $v$ or $h$ must occur non-consecutively, we can abitrarily assign $h$ to be the side that occurs non-consecutively by rotating the billiard table and creating the opposite collision sequence. For example, the sequence $vhhhvhhhv$ is the same as the sequence $hvvvhvvvh$ when one rotates the billiard table by $\pi/2$. Therefore, from now on, we can confine all our sequences to have only non-consecutive occurrences of $h$ (i.e. sequences like $vhhhvhhhv$ become $hvvvhvvvh$) without loss of generality.
