@@ -30,7 +30,7 @@ For the sake of space, we will rotate the $t$ axis so that it is horizontal.
 % -----------------------------------------------------------------------------
 
 \begin{lemma}\label{lem:interval-ticks}
-	The number of real numbers spaced at regular intervals $l_2$ inside an interval of length $l_1$ is in $\cbracket{\floor{\frac{l_1}{l_2}}, \ceil{\frac{l_1}{l_2}}}$.
+	Let $l_2 < l_1$. The number of real numbers spaced at regular intervals $l_2$ inside an interval of length $l_1$ is in $\cbracket{\floor{\frac{l_1}{l_2}}, \ceil{\frac{l_1}{l_2}}}$.
 \end{lemma}
 
 \begin{proof}
@@ -114,7 +114,7 @@ From Lemma \ref{lem:interval-ticks}, we know that $\beta^{(0)}_{max} = \ceil{\fr
 \begin{align}\label{delta_beta}
 	\delta^{(0)}_i \coloneqq \begin{cases}
 		x_0 \qquad &\text{for} \quad i = 0\\
-		i (\beta^{(0)}_{max} * 1 - m) + x_0 \qquad &\text{for} i \ge 1
+		i (\beta^{(0)}_{max} * 1 - m) + x_0 \qquad &\text{for} \quad i \ge 1
 	\end{cases}
 \end{align}
 
@@ -131,7 +131,7 @@ The rest of $a$ will be defined inductively. For $2 \le j < j_f$, assume that $a
 \begin{align}\label{delta_beta}
 	\delta^{(j)}_i \coloneqq \begin{cases}
 		x_0 \qquad &\text{for} \quad i = 0\\
-		i (\beta^{(j)}_{max} * 1 - m) + x_0 \qquad &\text{for} i \ge 1
+		i (\beta^{(j)}_{max} * 1 - m) + x_0 \qquad &\text{for} \quad i \ge 1
 	\end{cases}
 \end{align}
 
