@@ -74,21 +74,3 @@ From now on we will only consider collision sequences, where each non-terminal $
 
 	Thus $a$ is strictly decreasing and bounded below by 0, so ${\displaystyle \lim_{n \to \infty} a_n = 0}$.
 \end{proof}
-
-\subsection{Continued fractions (Jon's Notes)}
-
-\begin{align}
-	a_0& = m\\
-	a_1& = 1\\
-	a_2& = \beta^{(0)}_{max} - m\\
-	a_3& = \beta^{(1)}_{max} \paren{\beta^{(0)}_{max} - m} - 1\\
-	a_4& = \beta^{(2)}_{max} \paren{\beta^{(1)}_{max} \paren{\beta^{(0)}_{max} - m} - 1} - \paren{\beta^{(0)}_{max} - m}
-\end{align}
-
-\begin{align}
-	a_0 \approx 0 \quad &\rightarrow \quad m \approx 0\\
-	a_1 \approx 0 \quad &\rightarrow \quad m \approx 1\\
-	a_2 \approx 0 \quad &\rightarrow \quad m \approx \beta^{(0)}_{max}\\
-	a_3 \approx 0 \quad &\rightarrow \quad m \approx \beta^{(0)}_{max} - \cfrac{1}{\beta^{(1)}_{max}}\\
-	a_4 \approx 0 \quad &\rightarrow \quad m \approx \beta^{(0)}_{max} - \cfrac{1}{\beta^{(1)}_{max} - \cfrac{1}{\beta^{(2)}_{max}}}
-\end{align}
