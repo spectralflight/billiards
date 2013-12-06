@@ -12,17 +12,17 @@ Because of Lemma \ref{lem:h-extension}, without loss of generality we can confin
 
 % -----------------------------------------------------------------------------
 
-We will now show how the sequences in the $\beta$ group relate to the original problem of validating a collision sequence. In the process we will generate the interval sizes in each $\beta^{(j)}$ visualization which will form a new sequence $a$ (this statment will be made clearer shortly). 
+We will now show how the sequences in the $\beta$ group relate to the original problem of validating a collision sequence. In the process we will generate the sequence of interval sizes $a$. 
 
-Let us start with $a_0 \coloneqq m, a_1 \coloneqq 1$, which is the spacing of v collisions and h collisions respectively in the parametric representation. The rest of the $a$ sequence is generated inductively. For some $2 \le j < j_f$, assume that $a_{j-1}, a_{j-2}$ exist. 
+\textbf{TODO: still trying to figure out how to explain how the $\beta$ sequences relate to the original problem}
 
-\begin{definition}
-	Define $a_j$ as follows
+We start with $a_0 \coloneqq m, a_1 \coloneqq 1$, which are the spacing of v collisions and h collisions respectively in the parametric representation. The rest of the $a$ sequence is generated inductively. 
 
-	\begin{align}
-		a_{j} \coloneqq \beta^{(j-2)}_{max} a_{j-1} - a_{j-2} \qquad &\text{for} \quad 2 \le j < j_f
-	\end{align}
-\end{definition}
+For some $2 \le j < j_f$, assume that $a_{j-1}, a_{j-2}$ exist.
+
+\begin{align}
+	a_{j} = \beta^{(j-2)}_{max} a_{j-1} - a_{j-2} \qquad &\text{for} \quad 2 \le j < j_f
+\end{align}
 
 From now on we will only consider collision sequences, where each non-terminal $\beta^{(j)}$ starts and ends with $\beta^{(j)}_{min}$.
 
@@ -37,13 +37,13 @@ From now on we will only consider collision sequences, where each non-terminal $
 \end{theorem}
 
 \begin{proof}
-	This follows directly from Lemma \ref{lem:interval-ticks}.
+	This follows directly from Lemma \ref{lem:interval-ticks} and the definition of $\beta^{(j)}$.
 \end{proof}
 
 % -----------------------------------------------------------------------------
 
 \begin{theorem}
-	For every valid collision sequence, $\lim_{n \to \infty} a = 0$
+	For every valid collision sequence, ${\displaystyle \lim_{n \to \infty} a_n = 0}$
 \end{theorem}
 
 \begin{proof}
@@ -72,5 +72,23 @@ From now on we will only consider collision sequences, where each non-terminal $
 		0 \le a_j < a_{j-1}
 	\end{equation}
 
-	Thus $a$ is strictly decreasing and bounded below by 0, so $\lim_{n \to \infty} a_n = 0$.
+	Thus $a$ is strictly decreasing and bounded below by 0, so ${\displaystyle \lim_{n \to \infty} a_n = 0}$.
 \end{proof}
+
+\subsection{Continued fractions (Jon's Notes)}
+
+\begin{align}
+	a_0& = m\\
+	a_1& = 1\\
+	a_2& = \beta^{(0)}_{max} - m\\
+	a_3& = \beta^{(1)}_{max} \paren{\beta^{(0)}_{max} - m} - 1\\
+	a_4& = \beta^{(2)}_{max} \paren{\beta^{(1)}_{max} \paren{\beta^{(0)}_{max} - m} - 1} - \paren{\beta^{(0)}_{max} - m}
+\end{align}
+
+\begin{align}
+	a_0 \approx 0 \quad &\rightarrow \quad m \approx 0\\
+	a_1 \approx 0 \quad &\rightarrow \quad m \approx 1\\
+	a_2 \approx 0 \quad &\rightarrow \quad m \approx \beta^{(0)}_{max}\\
+	a_3 \approx 0 \quad &\rightarrow \quad m \approx \beta^{(0)}_{max} - \cfrac{1}{\beta^{(1)}_{max}}\\
+	a_4 \approx 0 \quad &\rightarrow \quad m \approx \beta^{(0)}_{max} - \cfrac{1}{\beta^{(1)}_{max} - \cfrac{1}{\beta^{(2)}_{max}}}
+\end{align}

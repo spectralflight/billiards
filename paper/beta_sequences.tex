@@ -27,8 +27,8 @@ We will the rest of the sequences in the $\beta$ group inductively.
 $\beta^{(j)}$ is much simpler to understand visually. A visualization representation is formed using the following rules:
 
 \begin{enumerate}
-  \item Divide the number line into regular intervals.
-  \item $\beta^{(j-1)}_{min}$ are represented as tick marks on the number line with a regular spacing.
+  \item Divide the number line into regular intervals of length $a_{j}$.
+  \item $\beta^{(j-1)}_{min}$ are represented as tick marks on the number line with a regular spacing $a_{j+1}$.
 	\item There is exactly one $\beta^{(j-1)}_{min}$ tick mark in each interval.
 	\item In each interval, all the $\beta^{(j-1)}_{max}$ terms come before the $\beta^{(j-1)}_{min}$ term.
 \end{enumerate}
@@ -69,5 +69,5 @@ An example $\beta^{(j)}$ sequence is plotted in \ref{fig:a-sequence}, with the $
 The number of tick marks in the $i^{th}$ interval is thus equal to $\beta^{(j)}_{max}$ plus the number of tick marks included in the $\delta^{(j)}_i$ interval minus the number of tick marks included in the $\delta^{(j)}_{i+1}$ interval. More precisely
 
 \begin{align}\label{eq:beta_i}
-  \beta^{(0)}_i = \floor{\delta^{(0)}_i} + \beta^{(0)}_{max} - \floor{\delta^{(0)}_{i+1}}
+  \beta^{(j)}_i = \floor{\delta^{(j)}_i} + \beta^{(j)}_{max} - \floor{\delta^{(j)}_{i+1}}
 \end{align}
