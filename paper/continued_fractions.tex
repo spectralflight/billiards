@@ -21,7 +21,7 @@ Where the quotients are given by:
       &\vdots& \\
 \end{eqnarray}
 
-We see that the quotients are given by the recursive formula: $k_j = \left\lfloor \frac{1}{m - k_{j-1}} \right\rfloor$. In fact, a more interesting observation is that the sequence of quotients $k_j$ form exactly the sequence of the minimum number of tick marks in each $\beta^{(j)}$ subproblem:
+We see that the quotients are given by the recursive formula: $k_j = \left\lfloor \frac{1}{m - [k_1, k_2, \ldots, k_{j-1}]} \right\rfloor$. In fact, a more interesting observation is that the sequence of quotients $k_j$ form exactly the sequence of the minimum number of tick marks in each $\beta^{(j)}$ subproblem:
 
 \begin{theorem}
   Given the continued fraction representation $m = [k_1, k_2, k_3, \ldots]$ for the slope $m \in \mathrm{R}$ of the combined trajectory $T$ of a billiard ball, we must have $k_j = \beta_{min}^{(j)}$.
@@ -29,7 +29,15 @@ We see that the quotients are given by the recursive formula: $k_j = \left\lfloo
 \begin{proof}
   We will proceed by induction. This is clearly true for $k_1 = \lfloor m \rfloor$ by lemma \ref{lem:interval-ticks}, since for $\beta_{min}^{(j)}$ the spacing of the larger tick marks are $m$ and the spacing of the smaller tick marks is $1$.
 
-  Now suppose we have shown our hypothesis to be true for $k_{j-1}$. This means that $\beta_{min}^{(j-1)} = k_{j-1}$. By definition \ref{def:beta-definition} (of the sequence $\beta^{(j)}$), we see that $\beta_i^{(j)}$ is one more than the number of occurrences of $\beta^{(j-1)}_{max}$ between the $i$th and $(i+1)$st occurrence of $\beta^{(j-1)}_{min}$ in the $\beta^{(j-1)}$ sequence.
+  Now suppose we have shown our hypothesis to be true for all $k_1, k_2, \ldots, k_{j-1}$. This means that $\beta_{min}^{(i)} = k_{i}$ for all $i \leq j-1$. By definition \ref{def:beta-definition} (of the sequence $\beta^{(j)}$), we see that $\beta_i^{(j)}$ is one more than the number of occurrences of $\beta^{(j-1)}_{max}$ between the $i$th and $(i+1)$st occurrence of $\beta^{(j-1)}_{min}$ in the $\beta^{(j-1)}$ sequence.
+
+  Now, we can find an expression for $k_{j}$ based on our definition of continued fractions:
+  \begin{eqnarray}
+    k_j &=& \left\lfloor \frac{1}{m - [k_1, k_2, \ldots, k_{j-1}]} \right\rfloor \\
+        &=& \left\lfloor \frac{1}{m - [\beta_{min}^{(1)}, \beta_{min}^{(2)}, \ldots, \beta_{min}^{(j-1)}]} \right\rfloor
+  \end{eqnarray}
+
+  However, notice that $d = m - [\beta_{min}^{(1)}, \ldots, \beta_{min}^{(j-1)}]$ is equal to the spacing between tick marks in the $\beta^{(j)}$ sequence. Thus, we see that $\beta_{min}^{(j)} = \lfloor 1/d \rfloor$. However, this is exactly what we wanted to show, since we know that $k_j = \floor 1/d \rfloor$, so we see that $\beta_{min}^{(j)} = k_j$.
 \end{proof}
 
 In fact, one can see that the process of finding $\beta^{(j)}_i$ for the $\beta^{(j)}$ subproblems exactly mirrors the process of finding the quotients $k_j$ in a continued fraction of $m$.
