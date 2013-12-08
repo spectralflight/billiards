@@ -4,31 +4,33 @@ Rather than looking at the explicit representation equation of lines in the plan
 
 \begin{align}\label{eq:parametric-line}
 	x_0& \coloneqq - \frac{y_0}{m}\\
-	x(t)& = \frac{1}{m} \, t + x_0\\
-	y(t)& = t
+	x(t)& = \frac{1}{m} \, t\\
+	y(t)& = t + y_0
 \end{align}
 
-Now v and h collisions in the 2-dimensional plane can be projected onto the 1-dimensional $t$ axis. The problem of mapping collision sequences to lines in the plane becomes a problem of fitting tick marks with regular spacing $1$ into intervals of length $m$.
+Now v and h collisions in the 2-dimensional plane can be projected onto the 1-dimensional $t$ axis as is shown in Figure \ref{fig:1d-projection}. 
 
 \begin{figure}[H]
   \begin{center}
     \includegraphics[keepaspectratio, height=4in]{1d_mapping_1}
   \end{center}
   \vspace{-.2in} % corrects bad spacing
-  \caption{\label{fig:1d-projection} Projecting onto the parametric representation.}
+  \caption{\label{fig:1d-projection} Projecting onto the $t$ axis.}
 \end{figure}
 
-For the sake of space, we will rotate the $t$ axis so that it is horizontal.
+For the sake of space, we will rotate the $t$ axis so that it is horizontal as is shown in Figure \ref{fig:1d-problem}. The problem of mapping collision sequences to lines in the plane becomes a problem of fitting tick marks with regular spacing $1$ into intervals of length $m$.
 
 \begin{figure}[H]
   \begin{center}
     \includegraphics[keepaspectratio, width=4in]{1d_mapping_2}
   \end{center}
   \vspace{-.2in} % corrects bad spacing
-  \caption{\label{fig:1d-problem} An example collision sequence.}
+  \caption{\label{fig:1d-problem} The 1-dimensional problem.}
 \end{figure}
 
 % -----------------------------------------------------------------------------
+
+To start off analyzing this 1-dimensional problem, we need a basic lemma about counting ticks inside an interval.
 
 \begin{lemma}\label{lem:interval-ticks}
 	Let $l_2 < l_1$. The number of real numbers at regular spacing $l_2$ inside an open interval of length $l_1$ is in $\cbracket{\floor{\frac{l_1}{l_2}}, \ceil{\frac{l_1}{l_2}}}$.
@@ -41,7 +43,7 @@ For the sake of space, we will rotate the $t$ axis so that it is horizontal.
 		l_1 = (a - 1) l_2 + b
 	\end{equation}
 
-	We know that $(a - 1) l_2 < l_1$, so $b \ge 0$. Also, $b < 2 \, l_2$ because otherwise, there must be more than $a$ real numbers inside the interval, contradicting our original assumption.
+	We know that $(a - 1) l_2 < l_1$, so $b \ge 0$. Also, $b < 2 \, l_2$, because otherwise, there must be more than $a$ real numbers inside the interval, contradicting our original assumption.
 
 	Rearranging Equation \ref{eq:interval-ticks}, we get
 
