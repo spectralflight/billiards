@@ -34,7 +34,7 @@ To understand collision sequences better, we will provide an example. Consider a
   \caption{\label{fig:example}Example Billiard Ball Trajectory, $x_0 = (0.75, 0.75)$, $v_0 = (0.23, 0.05)$}
 \end{figure}
 
-We can see from the figure that the collisions that it makes, denoting a $v$-collision with a $v$ and an $h$-collision with an $h$, are:
+We can see from the figure that the collisions that the ball makes, denoting a $v$-collision with a $v$ and an $h$-collision with an $h$, are:
 \begin{eqnarray}
 (v, h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v)
 \end{eqnarray}
@@ -45,7 +45,7 @@ A valid collision sequence given these initial conditions would start and end wi
   \alpha = hvvvvvhvvvvvh
 \end{eqnarray}
 
-Notice that the collisions will continue infinitely, so one could imagine extending this collision sequence to include more $v$ and $h$ collisions. Although not shown in the picture, the following collision sequence would also be valid if one continued showing the trajectory of the ball in future collisions:
+Notice that the collisions will continue infinitely, so one could imagine extending this collision sequence to include more $v$ and $h$ collisions. Although not shown in the picture, the following collision sequence would also be valid if one continued showing the trajectory of the ball from figure \ref{fig:example} in future collisions:
 
 \begin{eqnarray}
   \alpha = hvvvvvhvvvvvhvvvvvh
@@ -53,9 +53,9 @@ Notice that the collisions will continue infinitely, so one could imagine extend
 
 \subsection{Simplifications}
 
-There are some simplifications that we can make which will make talking about billiard balls, their initial conditions, and their collision sequences easier.
+There are some simplifications that we can make which will make it easier to talk about billiard balls, their initial conditions, and their collision sequences.
 
 \begin{itemize}
-  \item We can change the magnitude of the initial velocity $\bvec{v}_0$ without changing any collision sequences. This is because only the direction of $\bvec{v}_0$ affects the points of collision of the billiard ball with the table. Thus, the only part of the initial velocity that we care about is the velocity's direction. Thus, we can characterize $\bvec{v}_0$ by the angle $\gamma$ that $\bvec{v}_0$ makes with the positive horizontal line (just as in polar coordinates). From now on, we will use $\bvec{v}_0$ and $\gamma$ interchangeably.
-  \item We can constrain the initial velocity's angle to the range $\gamma \in [0, \pi/2]$. This is because any intial velocity in the range $\gamma \in [-\pi/2, \pi/2]$ will create equivalent collision sequences as $\pi + \gamma \in [0, \pi/2]$ (this will be clear once we present the tiling representation later in the paper). Moreover, any angle in the range $\gamma \in [0, \pi/2]$ will create equivalent collision sequences as those in $[-\pi/2, 0]$ by simply reflecting the square about one of its horizontal sides. For the rest of the paper, we will assume $\gamma \in [0, \pi/2]$.
+  \item We can change the magnitude of the initial velocity $\bvec{v}_0$ without changing any collision sequences. This is because only the direction of $\bvec{v}_0$ affects the points of collision. Thus, the only part of the initial velocity that we care about is the velocity's direction so we can characterize $\bvec{v}_0$ by the angle $\gamma$ that $\bvec{v}_0$ makes with the positive horizontal line (just like in polar coordinates). From now on, we will use $\bvec{v}_0$ and $\gamma$ interchangeably.
+  \item We can constrain the initial velocity's angle to the range $\gamma \in [0, \pi/2]$. This is because any intial velocity with an angle in the range $\gamma \in [\pi/2, 3\pi/2]$ will have equivalent collision sequences as $\pi + \gamma \in [-\pi/2, \pi/2]$ (this will be clear once we present the tiling representation later in the paper). Moreover, any angle in the range $\gamma \in [0, \pi/2]$ will create equivalent collision sequences as those in $[-\pi/2, 0]$ by simply reflecting the square about one of its horizontal sides. Thus, for the rest of the paper, we will assume $\gamma \in [0, \pi/2]$.
 \end{itemize}
