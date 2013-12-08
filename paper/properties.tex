@@ -1,4 +1,10 @@
-We will now use the tiling representation that we have developed to discover properties of collision sequences. The first simple property is that collision sequences are periodic when the initial conditions are rational numbers. Now that we can define a billiard ball trajectory as a line, instead of giving initial conditions $\bvec{x}_0$ and $\bvec{v}_0$, we can give the slope $m$ and the $y$-intercept $y_0$ of the complete trajectory's line. The formalized theorem is then:
+We will now use the tiling representation that we have developed to discover properties of collision sequences. The first simple property is that collision sequences are periodic when the initial conditions are rational numbers. Now that we can define a billiard ball trajectory as a line, instead of giving initial conditions $\bvec{x}_0$ and $\bvec{v}_0$, we can give the slope $m$ and the $y$-intercept $y_0$ of the complete trajectory's line.
+
+Theorem \ref{theorem:periodicity} will show that if $m \in \mathrm{Q}$, then the billiard ball will eventually return to it's original position $\bvec{x}_0$ with its original velocity $\bvec{v}_0$. Seeing why this is true is just a matter of using the tiling representation. We note that every second square in either the $x$ or $y$ direction is the same (because of the transitivity of reflection). Therefore, every second square will have a trajectory that exactly corresponds to the trajectory in the original square. Thus, when analyzing trajectories that are periodic, we must work modulo 2, since it takes two reflections in order to ``straighten out'' the table's reflection and get the original table's orientation back.
+
+Thus, if $y_0 \equiv mk + y_0 \pmod{2}$, then the $y$-intercept from one of the secondary squares is the same as the $y$-intercept from the original square. Since we know that the secondary squares have the same trajectories as in the original square, we see that the trajectory will have returned to its original position (since the velocity is the same). Thus, if $y_0 \equiv mk + y_0 \pmod{2}$, then we know that the billiard ball will return to its original position with its original velocity. Theorem \ref{theorem:periodicity} also shows that if $m$ is irrational, then the billiard ball will never return to its original position and velocity.
+
+The formalized theorem is:
 
 \begin{theorem}
   \label{theorem:periodicity}
@@ -16,10 +22,6 @@ We will now use the tiling representation that we have developed to discover pro
 
   Now let us show that if there exists a in $k \in \mathrm{N}$ such that $y_0 \equiv mk + y_0 \pmod{2}$, then $m \in \mathrm{Q}$. If such a $k$ exists, then we must have $0 \equiv mk \pmod{2}$, which means that $mk = 2q$ for some $q \in \mathrm{Z}$. This means $m = \frac{2q}{k}$. Now it is clear that $m \in \mathrm{Q}$ because both its numerator and denominator are integers.
 \end{proof}
-
-Theorem \ref{theorem:periodicity} shows that if $m \in \mathrm{Q}$, then the billiard ball will eventually return to it's original position $\bvec{x}_0$ with its original velocity $\bvec{v}_0$. Seeing why this is true is just a matter of using the tiling representation. We note that every second square in either the $x$ or $y$ direction is the same (because of the transitivity of reflection). Therefore, every second square will have a trajectory that exactly corresponds to the trajectory in the original square.
-
-Thus, if $y_0 \equiv mk + y_0 \pmod{2}$, then the $y$-intercept from one of the secondary squares is the same as the $y$-intercept from the original square. Since we know that the secondary squares have the same trajectories as in the original square, we see that the trajectory will have returned to its original position (since the velocity is the same). Thus, if $y_0 \equiv mk + y_0 \pmod{2}$, then we know that the billiard ball will return to its original position with its original velocity. Theorem \ref{theorem:periodicity} also shows that if $m$ is irrational, then the billiard ball will never return to its original position and velocity.
 
 We can also examine consecutive occurences of $v$ and $h$. For example, can we have consecutive occurences of both $v$ and $h$ like in the sequence $hhvvhh$? In fact, we cannot as theorem \ref{theorem:consecutive-collisions} shows.
 
