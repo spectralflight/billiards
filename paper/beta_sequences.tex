@@ -86,13 +86,13 @@ $\delta^{(j)}$ will be defined such that the spacing of elements of the sequence
 
 $\beta^{(j)}$ is much simpler to understand visually. Let's return to the example $\delta^{(j)}$ sequence, shown in Figure \ref{fig:delta-sequence-2}. We need to understand how the $\delta^{(j)}$ sequence is related to the $\beta^{(j-1)}$ sequence. 
 
-We know that $\beta^{(j-1)}_i$ is equal to $\beta^{(j-1)}_{min}$ plus the number of tick marks included in the $\delta^{(j-1)}_{i+1}$ interval minus the number of tick marks included in the $\delta^{(j-1)}_i$ interval. More precisely
+Referring back to Figure \ref{fig:delta-sequence}, it can be seen that $\beta^{(j-1)}_i$ is equal to $\beta^{(j-1)}_{min}$ plus the number of tick marks included in the $\delta^{(j-1)}_{i+1}$ interval minus the number of tick marks included in the $\delta^{(j-1)}_i$ interval. More precisely
 
 \begin{align}\label{eq:beta_i}
   \beta^{(j-1)}_i = \floor{\delta^{(j-1)}_{i+1}} + \beta^{(j)}_{min} - \floor{\delta^{(j-1)}_i} 
 \end{align}
 
-The reader should refer back to Figure \ref{fig:delta-sequence} to convince themselves of this relation, if it isn't clear. Figure plots the $\beta^{(j-1)}$ sequence in place of the $\delta^{(j)}$ sequence, along with the $\beta^{(j)}$ sequence which represents the number of tick marks in each interval.
+Figure plots the $\beta^{(j-1)}$ sequence in place of the $\delta^{(j)}$ sequence. Reffering back to the definition of $\beta^{(j)}$, it can be seen that $\beta^{(j)}$ counts the number of tick marks in each interval on the $\delta^{(j)}$ plot.
 
 \begin{figure}[H]
   \begin{center}
@@ -102,7 +102,7 @@ The reader should refer back to Figure \ref{fig:delta-sequence} to convince them
   \caption{\label{fig:beta-sequence-j} A general $\beta^{(j)}$ sequence.}
 \end{figure}
 
-As we promised earlier, we will finish defining the $\delta$ group. In words, each $\delta^{(j)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(j)}_{min})^{th}$ tick mark in the $\beta^{(j)}$ visual representation.
+As was promised earlier, we will finish defining the $\delta$ group. In words, each $\delta^{(j)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(j)}_{min})^{th}$ tick mark in the $\beta^{(j)}$ visual representation.
 
 \begin{definition}
   $\delta^{(j)}$ is defined more precisely as
