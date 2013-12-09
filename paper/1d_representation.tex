@@ -3,7 +3,6 @@
 Rather than looking at the explicit representation equation of lines in the plane, we can gain much more insight from looking at the parametric representation. To simplify our analysis, we will choose our time parameter such that v collisions occur every $\Delta t = 1$ and h collisions occur every $\Delta t = m$. The equation for a line $y(x) = m \, x + y_0$ is equivalent to the following parametric system
 
 \begin{align}\label{eq:parametric-line}
-	x_0& \coloneqq - \frac{y_0}{m}\\
 	x(t)& = \frac{1}{m} \, t\\
 	y(t)& = t + y_0
 \end{align}
@@ -18,7 +17,7 @@ Now v and h collisions in the 2-dimensional plane can be projected onto the 1-di
   \caption{\label{fig:1d-projection} Projecting onto the $t$ axis.}
 \end{figure}
 
-For the sake of space, we will rotate the $t$ axis so that it is horizontal as is shown in Figure \ref{fig:1d-problem}. The problem of mapping collision sequences to lines in the plane becomes a problem of fitting tick marks with regular spacing $1$ into intervals of length $m$.
+For the sake of space, we will rotate the $t$ axis so that it is horizontal, as is shown in Figure \ref{fig:1d-problem}. The problem of mapping collision sequences to lines in the plane becomes a problem of fitting regularly spaced tick marks into intervals on the real number line.
 
 \begin{figure}[H]
   \begin{center}
@@ -30,7 +29,7 @@ For the sake of space, we will rotate the $t$ axis so that it is horizontal as i
 
 % -----------------------------------------------------------------------------
 
-To start off analyzing this 1-dimensional problem, we need a basic lemma about counting ticks inside an interval.
+To start off analyzing this 1-dimensional problem, we need a basic lemma about counting ticks marks inside an interval.
 
 \begin{lemma}\label{lem:interval-ticks}
 	Let $l_2 < l_1$. The number of real numbers at regular spacing $l_2$ inside an open interval of length $l_1$ is in $\cbracket{\floor{\frac{l_1}{l_2}}, \ceil{\frac{l_1}{l_2}}}$.

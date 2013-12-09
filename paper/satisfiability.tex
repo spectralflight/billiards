@@ -1,30 +1,6 @@
 %!TEX root = paper.tex
 
-\begin{lemma}\label{lem:h-extension}
-	A finite sequence $\alpha$ is a valid collision sequence iff there exists at least one valid collision sequence containing $\alpha$ that starts and ends with an h.
-\end{lemma}
-
-\begin{proof}
-	TODO: can extend any collision sequence to any length. 
-\end{proof}
-
-Because of Lemma \ref{lem:h-extension}, without loss of generality we can confine ourselves to only look at collision sequences that start and end with an h.
-
-% -----------------------------------------------------------------------------
-
-We will now show how the sequences in the $\beta$ group relate to the original problem of validating a collision sequence. In the process we will generate the sequence of interval sizes $a$. 
-
-\textbf{TODO: still trying to figure out how to explain how the $\beta$ sequences relate to the original problem}
-
-We start with $a_0 \coloneqq m, a_1 \coloneqq 1$, which are the spacing of v collisions and h collisions respectively in the parametric representation. The rest of the $a$ sequence is generated inductively. 
-
-For some $2 \le j < j_f$, assume that $a_{j-1}, a_{j-2}$ exist.
-
-\begin{align}
-	a_{j} = \beta^{(j-2)}_{max} a_{j-1} - a_{j-2} \qquad &\text{for} \quad 2 \le j < j_f
-\end{align}
-
-From now on we will only consider collision sequences, where each non-terminal $\beta^{(j)}$ starts and ends with $\beta^{(j)}_{min}$.
+In this paper, we will only present a satisfiability condition for collision sequences, where $\alpha$ starts and ends with v, and all $\beta^{(j)}$ start and end with $\beta^{(j)}_{max}$. This is only a minor restriction, and applying our results to the general case would only require some special treatment for the ends of the collision sequence.
 
 % -----------------------------------------------------------------------------
 
