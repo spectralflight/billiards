@@ -23,7 +23,7 @@ The first sequence in the $\delta$ group, $\delta^{(0)}$, is defined such that e
 \end{equation}
 
 \begin{definition}
-  Given a $\beta^{(0)}$ sequence, $\delta^{(0)}$ is defined as follows.
+  Given a $\beta^{(0)}$ sequence, $\delta^{(0)}$ is defined as follows
 
   \begin{align}\label{delta_beta}
     \delta^{(0)}_i \coloneqq \begin{cases}
@@ -33,7 +33,7 @@ The first sequence in the $\delta$ group, $\delta^{(0)}$, is defined such that e
   \end{align}
 \end{definition}
 
-Visually, each element $\delta^{(0)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(0)}_{min})^{th}$ tick mark (with positive distance measured right to left). Figure \ref{fig:delta-sequence} shows the $\delta^{(0)}_i$ sequence on top of the original parametric representation (top) as well as by itself (bottom).
+Visually, each element $\delta^{(0)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(0)}_{min})^{th}$ tick mark (with positive distance measured right to left). Figure \ref{fig:delta-sequence} shows the $\delta^{(0)}_i$ sequence on top of the original parametric representation (top of the Figure) as well as by itself (bottom of the Figure).
 
 \begin{figure}[H]
   \begin{center}
@@ -43,10 +43,10 @@ Visually, each element $\delta^{(0)}_i$ is the distance between the beginning of
   \caption{\label{fig:delta-sequence} Generating the $\delta^{(0)}$ sequence.}
 \end{figure}
 
-Our next step is to define $\beta^{(j)}, \delta^{(j)}$ for $j \ge 1$, which will be done in an inductive manner. Before continuing, let's create a sequence $a$ that will be helpful for defining the rest of the $\beta$ and $\delta$ groups.
+Our next step is to define $\beta^{(j)}, \delta^{(j)}$ for $j \ge 1$, which will be done in an inductive manner. Before continuing, let's create a new sequence that will be helpful for defining the rest of the $\beta$ and $\delta$ groups.
 
 \begin{definition}
-  Assume that the $\beta$ group is fully defined, the $a$ is defined as follows
+  Assume that the $\beta$ group is fully defined, then $a$ is defined as follows
 
   \begin{equation}
     a_j \coloneqq \begin{cases}
@@ -74,7 +74,7 @@ $\delta^{(j)}$ will be defined such that the spacing of elements of the sequence
     \includegraphics[keepaspectratio]{1d_mapping_6}
   \end{center}
   \vspace{-.2in} % corrects bad spacing
-  \caption{\label{fig:delta-sequence-2} An example $\delta^{(j)}$ sequence.}
+  \caption{\label{fig:delta-sequence-2} An example $\delta^{(j-1)}$ sequence.}
 \end{figure}
 
 \begin{definition}
@@ -84,7 +84,7 @@ $\delta^{(j)}$ will be defined such that the spacing of elements of the sequence
   If, for some $j_f$, the length of $\beta^{(j_f-1)}$ is 1, then $\beta^{(j_f-1)}$ is called the terminating $\beta$ sequence, and all subsequent $\beta^{(j)}$ for $j \ge j_f$ are undefined.
 \end{definition}
 
-$\beta^{(j)}$ is much simpler to understand visually. Let's return to the example $\delta^{(j)}$ sequence, shown in Figure \ref{fig:delta-sequence-2}. We need to understand how the $\delta^{(j)}$ sequence is related to the $\beta^{(j-1)}$ sequence. 
+$\beta^{(j)}$ is much simpler to understand visually. Let's return to the example $\delta^{(j-1)}$ sequence, shown in Figure \ref{fig:delta-sequence-2}. We need to understand how the $\delta^{(j-1)}$ sequence is related to the $\beta^{(j-1)}$ sequence. 
 
 Referring back to Figure \ref{fig:delta-sequence}, it can be seen that $\beta^{(j-1)}_i$ is equal to $\beta^{(j-1)}_{min}$ plus the number of tick marks included in the $\delta^{(j-1)}_{i+1}$ interval minus the number of tick marks included in the $\delta^{(j-1)}_i$ interval. More precisely
 
@@ -92,7 +92,7 @@ Referring back to Figure \ref{fig:delta-sequence}, it can be seen that $\beta^{(
   \beta^{(j-1)}_i = \floor{\delta^{(j-1)}_{i+1}} + \beta^{(j)}_{min} - \floor{\delta^{(j-1)}_i} 
 \end{align}
 
-Figure plots the $\beta^{(j-1)}$ sequence in place of the $\delta^{(j)}$ sequence. Reffering back to the definition of $\beta^{(j)}$, it can be seen that $\beta^{(j)}$ counts the number of tick marks in each interval on the $\delta^{(j)}$ plot.
+Figure \ref{fig:beta-sequence-j} plots the $\beta^{(j-1)}$ sequence in place of the $\delta^{(j)}$ sequence. Reffering back to the definition of $\beta^{(j)}$, it can be seen that $\beta^{(j)}$ counts the number of tick marks in each interval on the $\delta^{(j-1)}$ plot.
 
 \begin{figure}[H]
   \begin{center}
