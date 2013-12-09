@@ -4,9 +4,9 @@ This introduction will explain the general setup of the problem and will give an
 
 \subsection{Setup}
 
-We will imagine an infinitesimally small billiard ball on a square table. For simplicity, we will assume that the square table is defined on the unit square $[0,1]^2$. The ball will start at some initial position $\bvec{x}_0$ inside of the table and with some velocity $\bvec{v}_0$. We will assume that the ball is massless and frictionless, and that there is no gravity.
+We will imagine an infinitesimally small billiard ball on a square table. For simplicity, we will assume that the square table is defined on the unit square $[0,1]^2$. The ball will start at some initial position $\bvec{x}_0$ inside of the table and with some velocity $\bvec{v}_0$. We will assume that the ball is massless and frictionless.
 
-We will assume ideal, elastic collisions. To be more precise, when the ball collides with an edge of the table, the ball's velocity will be reflected across the line perpendicular to the edge of the table at the point of collision. In other words, the angle of incidence is equal to the angle of reflection on all billiard ball collisions. Figure \ref{fig:collision-angle} shows the general mechanics of a collision.
+We will assume ideal, elastic collisions. To be more precise, when the ball collides with an edge of the table, the ball's velocity will be reflected across the line perpendicular to the edge of the table at the point of collision. In other words, the angle of incidence is equal to the angle of reflection on all billiard ball collisions. Collisions at a corner of the square table are undefined and we assume that all trajectories we deal with in this paper will not collide with a corner. Figure \ref{fig:collision-angle} shows the general mechanics of a collision.
 
 \begin{figure}
   \includegraphics[width=2in]{particle_collision.png}
@@ -18,12 +18,12 @@ Now, we will label the horizontal sides of the table $h$ and the vertical sides 
 We will now define what this paper will be primarily interested in, a sequence of collisions:
 
 \begin{definition}
-  A \emph{collision sequence} ($\alpha$) for a ball $B$ is the sequence of $v$'s and $h$'s which appear as the ball collides with the walls of the billiard table.
+  A \emph{collision sequence} ($\alpha$) for a ball $B$ is the sequence of $v$'s and $h$'s which appear as the ball collides with the walls of the billiard table, ordered by the time at which the collisions occur.
 \end{definition}
 
-Notice that all non-trivial initial conditions for a billiard ball will result in infinitely many $h$-collisions. The only initial conditions for which this is not true are when the initial velocity is parallel to the horizontal (for example when $\bvec{v}_0 = (1, 0)$) so that the ball bounces infinitely between the two vertical sides. The proof of this is trivial and should become clear once the tiling representation is presented, so we will omit it.
+Notice that all non-trivial initial conditions for a billiard ball will result in infinitely many $h$-collisions. The only initial conditions for which this is not true are the trivial initial conditions, i.e. when the initial velocity is parallel to the horizontal (for example when $\bvec{v}_0 = (1, 0)$) so that the ball bounces infinitely between the two vertical sides or when the initial velocity is parallel to the vertical (for example when $\bvec{v}_0 = (0, 1)$). The proof of this is trivial and should become clear once the tiling representation is presented, so we will omit it.
 
-Thus, it is perfectly reasonable to constrain a ball's collision sequence to begin and end with an $h$ collision, since one simply needs to extend the number of collisions one watches until the sequence of collisions begins and ends with an $h$-collision. This constraint will later make it easier to reason about properties of sequences.
+Throughout this paper, we will constrain a ball's collision sequence to begin and end with an $h$. Thus, it is perfectly reasonable to constraint since one simply needs to extend the number of collisions one watches until the sequence of collisions begins and ends with an $h$-collision. This constraint will later make it easier to reason about properties of sequences.
 
 \subsection{Example Collision Sequence}
 
@@ -42,13 +42,13 @@ We can see from the figure that the collisions that the ball makes, denoting a $
 A valid collision sequence given these initial conditions would start and end with an $h$ collision. A possible example would be:
 
 \begin{eqnarray}
-  \alpha = hvvvvvhvvvvvh
+  \alpha = ( h, v, v, v, v, v, h, v, v, v, v, v, h)
 \end{eqnarray}
 
 Notice that the collisions will continue infinitely, so one could imagine extending this collision sequence to include more $v$ and $h$ collisions. Although not shown in the picture, the following collision sequence would also be valid if one continued showing the trajectory of the ball from figure \ref{fig:example} in future collisions:
 
 \begin{eqnarray}
-  \alpha = hvvvvvhvvvvvhvvvvvh
+  \alpha = (h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v, v, v, h)
 \end{eqnarray}
 
 \subsection{Simplifications}

@@ -1,11 +1,11 @@
 We will now present the tiling representation of the problem which will greatly simplify the analysis of $v$ and $h$ collisions for some ball $B$. First we will define some basic definitions.
 
 \begin{definition}
-  A billiard ball \emph{trajectory} $\tau(t_0, t_1)$ is the curved traced by a billiard ball $B$ between times $t_0$ and $t_1$.
+  A billiard ball \emph{trajectory} $\tau(t_0, t_1)$ is the curve traced by a billiard ball $B$ between times $t_0$ and $t_1$.
 \end{definition}
 
 \begin{definition}
-  A collision time $\kappa_i$ for a billiard ball $B$ is the time at which the $i$th collision occurs.
+  A collision time $\kappa_i$ for a billiard ball $B$ is the time at which the $i^{\textrm{th}}$ collision occurs.
 \end{definition}
 
 To understand the basics of how the tiling representation works, imagine placing a unit square billiard table on the $xy$ plane. The table's edges will be the four line segments bordering the unit square. A ball will start with some initial position $\bvec{x}_0 \in [0,1]^2$ and velocity $\bvec{v}_0$. After some time, the ball will collide with an edge $e_0$ of the table at time $\kappa_1$. However, instead of thinking of the trajectory of the ball as being reflected across the line perpendicular to $e_0$ at the point of collision, we will instead reflect the original unit square $s_0$ across the edge $e_0$ to create a new square $s_1$. Now, the trajectory $\tau(\kappa_1, \kappa_2)$ of the ball after the first collision will be traced in the new square $s_1$.
@@ -47,7 +47,10 @@ The velocity is reflected about the line perpendicular to $e_i$ at the point of 
 It is clear that the angles that $\tau(\kappa_{i-1}, \kappa_i)$ and $\tau(\kappa_{i}, \kappa_{i+1})$ make with $e_i$ are both $\theta$. Since both of these trajectories are already line segments, we see that the union of the two trajectories is also a line segment. Thus, we see that all trajectories $\tau(\kappa_j, \kappa_{j+1})$ for all $j \in \mathrm{Z}$ lie on the same line, which completes the proof.
 \end{proof}
 
+We will now show that all $v$-collisions happen exactly when the combined trajectory $T$ intersects with the integer vertical lines $x = k$ where $k \in \mathrm{Z}$, and all $h$-collisions happen when the combined trajectory $T$ intersects with theinteger horizontal lines $y = k$ for $k \in \mathrm{Z}$. To make this notion precise, we will define times at which these intersections occur in theorem \ref{theorem:trajectory-intersection}. We will show that the time of intersection between the combined trajectory and a vertical line must equal the time of collision between the ball and a $v$ side, and an analogous result for horizontal lines.
+
 \begin{theorem}
+  \label{theorem:trajectory-intersection}
   Let $t_{v, k}$ be a time when the combined trajectory $T$ for some ball $B$ intersects with some integer vertical line $x = k$ where $k \in \mathrm{Z}$. We must have $\kappa^v_k = t_{v, k}$, where $\kappa^v_k$ is the time at which the $k$th $v$-collision occurs.
 
   Similarly, let $t_{h, k}$ be a time when the combined trajectory $T$ intersects with some horizontal vertical line $y = k$ for $k \in \mathrm{Z}$. Then, $\kappa^h_k = t_{h, k}$.
