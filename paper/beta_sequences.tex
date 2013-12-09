@@ -25,7 +25,7 @@ The first sequence in the $\delta$ group, $\delta^{(0)}$, is defined such that e
 \begin{definition}
   Given a $\beta^{(0)}$ sequence, $\delta^{(0)}$ is defined as follows
 
-  \begin{align}\label{delta_beta}
+  \begin{align}\label{delta_0}
     \delta^{(0)}_i \coloneqq \begin{cases}
       -(1-y_0) \qquad &\text{for} \quad i = 0\\
       i (m - \beta^{(0)}_{min}) - (1-y_0) \qquad &\text{for} \quad i \ge 1
@@ -33,7 +33,7 @@ The first sequence in the $\delta$ group, $\delta^{(0)}$, is defined such that e
   \end{align}
 \end{definition}
 
-Visually, each element $\delta^{(0)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(0)}_{min})^{th}$ tick mark (with positive distance measured right to left). Figure \ref{fig:delta-sequence} shows the $\delta^{(0)}_i$ sequence on top of the original parametric representation (top of the Figure) as well as by itself (bottom of the Figure).
+Visually, each $\delta^{(0)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(0)}_{min})^{th}$ tick mark (with positive distance measured right to left). Figure \ref{fig:delta-sequence} shows the $\delta^{(0)}_i$ sequence on top of the original parametric representation (top of the figure) as well as by itself (bottom of the figure).
 
 \begin{figure}[H]
   \begin{center}
@@ -43,10 +43,29 @@ Visually, each element $\delta^{(0)}_i$ is the distance between the beginning of
   \caption{\label{fig:delta-sequence} Generating the $\delta^{(0)}$ sequence.}
 \end{figure}
 
-Our next step is to define $\beta^{(j)}, \delta^{(j)}$ for $j \ge 1$, which will be done in an inductive manner. Before continuing, let's create a new sequence that will be helpful for defining the rest of the $\beta$ and $\delta$ groups.
+Our next step is to define $\beta^{(j)}, \delta^{(j)}$ for $j \ge 1$, which will be done in an inductive manner. 
 
 \begin{definition}
-  Assume that the $\beta$ group is fully defined, then $a$ is defined as follows
+  \label{def:beta-definition}
+  Given a collision sequence $\alpha$, for some $j > 0$ assume that $\beta^{(j-1)}$ is defined and each element in the sequence is either $\beta^{(j-1)}_{min}$ or $\beta^{(j-1)}_{max}$. The sequence $\beta^{(j)}$ is defined such that each element $\beta^{(j)}_i$ is 1 more than the number of occurrences of $\beta^{(j-1)}_{min}$ between the $i^{th}$ and $(i+1)^{th}$ occurrence of $\beta^{(j-1)}_{max}$ in the $\beta^{(j-1)}$ sequence. From Lemma \ref{lem:interval-ticks}, each element in $\beta^{(j)}$ can be one of two different values, which we will refer to as $\beta^{(j)}_{min}, \beta^{(j)}_{max}$.
+
+  If, for some $j_f$, the length of $\beta^{(j_f-1)}$ is 1, then $\beta^{(j_f-1)}$ is called the terminating $\beta$ sequence, and all subsequent $\beta^{(j)}$ for $j \ge j_f$ are undefined.
+\end{definition}
+
+This definition is much easier to explain visually. Figure \ref{fig:beta-sequence-j} shows a plot of a $\beta^{(j-1)}$ sequence (the reason for plotting the sequence in this specific manner will be explained later). $\beta^{(j)}$ is formed by counting tick marks in each interval on the $t$ axis.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[keepaspectratio]{1d_mapping_7}
+  \end{center}
+  \vspace{-.2in} % corrects bad spacing
+  \caption{\label{beta-sequence-j} A general $\beta^{(j)}$ sequence.}
+\end{figure}
+
+Before continuing on to define $\delta^{(j)}$, let's create a new sequence that will be helpful in the definition.
+
+\begin{definition}
+  Given that the $\beta$ group exists, then $a$ is defined as follows
 
   \begin{equation}
     a_j \coloneqq \begin{cases}
@@ -67,7 +86,20 @@ $a_{-2}, a_{-1}$ are the interval size and tick spacing in our original problem.
   \caption{\label{fig:a-0} $a_0$.}
 \end{figure}
 
-$\delta^{(j)}$ will be defined such that the spacing of elements of the sequences will be $a_j$ for $j \ge 1$. For the moment, the reader should assume that, given some $j$, then $\delta^{(j-1)}$ exists and its elements are strictly increasing and evenly spaced. An example $\delta^{(j-1)}$ sequence is shown in Figure \ref{fig:delta-sequence-2}.
+We can now finish defining the $\delta$ group. In words, each $\delta^{(j)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(j)}_{min})^{th}$ tick mark in the $\delta^{(j-1)}$ plot.
+
+\begin{definition}
+  $\delta^{(j)}$ is defined as follows
+
+  \begin{align}\label{delta_beta}
+    \delta^{(j)}_i \coloneqq \begin{cases}
+      -(1-y_0) \qquad &\text{for} \quad i = 0\\
+      i (a_{j-2} - \beta^{(j)}_{min} * a_{j-1}) - (1-y_0) \qquad &\text{for} \quad i \ge 1
+    \end{cases}
+  \end{align}
+\end{definition}
+
+An example $\delta^{(j-1)}$ sequence is shown in Figure \ref{fig:delta-sequence-2}.
 
 \begin{figure}[H]
   \begin{center}
@@ -77,22 +109,13 @@ $\delta^{(j)}$ will be defined such that the spacing of elements of the sequence
   \caption{\label{fig:delta-sequence-2} An example $\delta^{(j-1)}$ sequence.}
 \end{figure}
 
-\begin{definition}
-  \label{def:beta-definition}
-  Given a collision sequence $\alpha$, for some $j > 0$ assume that $\beta^{(j-1)}$ is defined and each element in the sequence is either $\beta^{(j-1)}_{min}$ or $\beta^{(j-1)}_{max}$. The sequence $\beta^{(j)}$ is defined such that each element $\beta^{(j)}_i$ is 1 more than the number of occurrences of $\beta^{(j-1)}_{min}$ between the $i^{th}$ and $(i+1)^{th}$ occurrence of $\beta^{(j-1)}_{max}$ in the $\beta^{(j-1)}$ sequence. From Lemma \ref{lem:interval-ticks}, each element in $\beta^{(j)}$ can be one of two different values, which we will refer to as $\beta^{(j)}_{min}, \beta^{(j)}_{max}$.
-
-  If, for some $j_f$, the length of $\beta^{(j_f-1)}$ is 1, then $\beta^{(j_f-1)}$ is called the terminating $\beta$ sequence, and all subsequent $\beta^{(j)}$ for $j \ge j_f$ are undefined.
-\end{definition}
-
-$\beta^{(j)}$ is much simpler to understand visually. Let's return to the example $\delta^{(j-1)}$ sequence, shown in Figure \ref{fig:delta-sequence-2}. We need to understand how the $\delta^{(j-1)}$ sequence is related to the $\beta^{(j-1)}$ sequence. 
-
-Referring back to Figure \ref{fig:delta-sequence}, it can be seen that $\beta^{(j-1)}_i$ is equal to $\beta^{(j-1)}_{min}$ plus the number of tick marks included in the $\delta^{(j-1)}_{i+1}$ interval minus the number of tick marks included in the $\delta^{(j-1)}_i$ interval. More precisely
+To move forward, we need to understand how the $\delta^{(j-1)}$ sequence is related to the $\beta^{(j-1)}$ sequence. Referring back to Figure \ref{fig:delta-sequence}, it can be seen that $\beta^{(j-1)}_i$ is equal to $\beta^{(j-1)}_{min}$ plus the number of tick marks included in the $\delta^{(j-1)}_{i+1}$ interval minus the number of tick marks included in the $\delta^{(j-1)}_i$ interval. More precisely
 
 \begin{align}\label{eq:beta_i}
   \beta^{(j-1)}_i = \floor{\delta^{(j-1)}_{i+1}} + \beta^{(j)}_{min} - \floor{\delta^{(j-1)}_i} 
 \end{align}
 
-Figure \ref{fig:beta-sequence-j} plots the $\beta^{(j-1)}$ sequence in place of the $\delta^{(j)}$ sequence. Referring back to the definition of $\beta^{(j)}$, it can be seen that $\beta^{(j)}$ counts the number of tick marks in each interval on the $\delta^{(j-1)}$ plot.
+Figure \ref{fig:beta-sequence-j} plots the $\beta^{(j-1)}$ sequence in place of the $\delta^{(j)}$ sequence. This plot was shown earlier, but it should be clearer now from Equation \ref{eq:beta_i} why the $\beta^{(j-1)}_{max}$ tick marks appear at the end of each interval.
 
 \begin{figure}[H]
   \begin{center}
@@ -102,17 +125,5 @@ Figure \ref{fig:beta-sequence-j} plots the $\beta^{(j-1)}$ sequence in place of 
   \caption{\label{fig:beta-sequence-j} A general $\beta^{(j)}$ sequence.}
 \end{figure}
 
-As was promised earlier, we will finish defining the $\delta$ group. In words, each $\delta^{(j)}_i$ is the distance between the beginning of the $i^{th}$ interval and the $(i \, \beta^{(j)}_{min})^{th}$ tick mark in the $\beta^{(j)}$ visual representation.
-
-\begin{definition}
-  $\delta^{(j)}$ is defined more precisely as
-
-  \begin{align}\label{delta_beta}
-    \delta^{(j)}_i \coloneqq \begin{cases}
-      1(1-y_0) \qquad &\text{for} \quad i = 0\\
-      i (a_{j-2} - \beta^{(j)}_{min} * a_{j-1}) - (1-y_0) \qquad &\text{for} \quad i \ge 1
-    \end{cases}
-  \end{align}
-\end{definition}
 
 

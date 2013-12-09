@@ -5,15 +5,17 @@ In this paper, we will only present a satisfiability condition for collision seq
 % -----------------------------------------------------------------------------
 
 \begin{theorem}\label{thm:beta_i}
-	A collision sequence is valid if the following is true for all $j$
+	Given a collision sequence that starts and ends with v, and all $\beta^{(j)}$ start and end with $\beta^{(j)}_{max}$, the collision sequence is valid $\leftrightarrow$ the following is true for all $j$
 
-	\begin{equation}
+	\begin{equation}\label{eq:beta-prop}
 		\beta^{(j)}_i \in \cbracket{\floor{\frac{a_{j-2}}{a_{j-1}}}, \ceil{\frac{a_{j-2}}{a_{j-1}}}}
 	\end{equation}
 \end{theorem}
 
 \begin{proof}
-	This follows directly from Lemma \ref{lem:interval-ticks} and the definition of $\beta^{(j)}$.
+	Proving the $\rightarrow$ part of the theorem follows directly from Lemma \ref{lem:interval-ticks}.
+
+	To prove the $\leftarrow$ part we can notice that $\alpha$ is valid iff $\delta^{(0)}$ is valid, and $\delta^{(0)}$ is valid iff $\delta^{(1)}$ is valid, etc. Going back to Lemma \ref{lem:interval-ticks} again, $\delta^{(j)}$ is valid only if Equation \ref{eq:beta-prop} is true.
 \end{proof}
 
 % -----------------------------------------------------------------------------
