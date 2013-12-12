@@ -4,9 +4,9 @@ The problem we will analyze in this paper is that of a billiard ball bouncing ar
 
 \subsection{Setup}
 
-The ball and table will be idealized in the following manner: we will represent the ball as a point moving around in $\R^2$ and the board as the unit square $[0,1]^2$. The ball will start with an initial position $\bvec{x}_0 \in [0,1]^2$ and initial velocity $\bvec{v}_0$. Because there are no external forces and/or dissipative forces, the speed of the ball will be constant throughout its trajectory, and thus only the direction of motion is important.
+The ball and table will be idealized in the following manner: we will represent the ball as a point moving around in $\R^2$ and the board as the unit square $[0,1]^2$. The ball will start with an initial position $\bvec{x}_0 \in [0,1]^2$ and initial velocity $\bvec{u}_0$. Because there are no external forces and/or dissipative forces, the speed of the ball is constant and irrelevant to the problem.
 
-Any time the position of the ball (point) coincides with the edge of the table (unit square), we will say that the ball collides with that edge of the table. During this collision, the ball is reflected off the edge of the table in such a manner that the outgoing velocity is a reflection of the incoming velocity across the line perpendicular to the edge of the table at the point of collision. In more technical terms, the angle of incidence is equal to the angle of reflection in all ball-table collisions. Collisions at corners of the table are undefined and so we will ignore any such trajectories. Figure \ref{fig:collision-angle} shows the general mechanics of a collision.
+Any time the position of the ball (point) coincides with the edge of the table (unit square), we will say that the ball collides with that edge of the table. During this collision, the ball is reflected off the edge of the table in such a manner that the outgoing direction vector is a reflection of the incoming direction vector across the line perpendicular to the edge of the table at the point of collision. In more technical terms, the angle of incidence is equal to the angle of reflection in all ball-table collisions. Collisions at corners of the table are undefined and so we will ignore any such trajectories that intersect corners of the table. Figure \ref{fig:collision-angle} shows the general mechanics of a collision.
 
 \begin{figure}[H]
   \begin{center}
@@ -19,19 +19,19 @@ Any time the position of the ball (point) coincides with the edge of the table (
 Introducing some notation to the problem, we will label the horizontal edges of the table $h$ and the vertical edges of the table $v$. Whenever the ball collides with a horizontal edge, we will call the resulting collision an $h$ collision. Likewise, collisions with vertical edges will be denoted as $v$ collisions.
 
 \begin{definition}
-  A \emph{collision sequence} ($\alpha$) for a ball is the sequence of sides that the ball collides with ($\alpha_i \in {v, h}$). This sequence is ordered by increasing collision time. In this paper, ball trajectories are idealized and infinite, but we will only look at finite subsequences of the infinite collision sequences formed by these trajectories.
+  A \emph{collision sequence} ($\alpha$) for a ball is the sequence of sides that the ball collides with ($\alpha_i \in \cbracket{v, h}$). This sequence is ordered by increasing collision time. In this paper, ball trajectories are idealized and infinite, but we will only look at finite subsequences of the infinite collision sequences formed by these trajectories. Furthermore, we will only look at finite collision sequences that start and end with h.
 \end{definition}
 
 \subsection{An Example Collision Sequence}
 
-For the reader to better understand the basic properties of collision sequences, we will consider an example trajectory and form a collision sequence from a short segment of the trajectory. Consider a ball with initial position $\bvec{x}_0 = (0.75, 0.75)$ and initial velocity $\bvec{v}_0 = (0.23, 0.05)$.
+For the reader to better understand the basic properties of collision sequences, we will consider an example trajectory and form a collision sequence from a short segment of the trajectory. Consider a ball with initial position $\bvec{x}_0 = (0.75, 0.75)$ and initial velocity $\bvec{u}_0 = (4.6, 1)$.
 
 \begin{figure}[H]
   \begin{center}
     \includegraphics[keepaspectratio,width=3in]{example.png}
   \end{center}
   \vspace{-.2in} % corrects bad spacing
-  \caption{\label{fig:example}Example trajectory, $x_0 = (0.75, 0.75)$, $v_0 = (0.23, 0.05)$.}
+  \caption{\label{fig:example}Example trajectory, $x_0 = (0.75, 0.75)$, $u_0 = (4.6, 1)$.}
 \end{figure}
 
 The collision sequence corresponding to this trajectory segment is the following:
@@ -39,12 +39,3 @@ The collision sequence corresponding to this trajectory segment is the following
 \begin{equation}
 	\alpha = (v, h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v)
 \end{equation}
-
-\subsection{Simplifications}
-
-There are a few simplifications that we can make which will make it easier to talk about balls, their initial conditions, and their collision sequences.
-
-\begin{itemize}
-  \item Only the direction of $\bvec{v}_0$ affects the trajectory shape, so from now on, $v_0$ will refer to the initial trajectory
-  \item We can constrain the initial velocity's angle to the range $\gamma \in [0, \pi/2]$. This is because any initial velocity with an angle in the range $\gamma \in [\pi/2, 3\pi/2]$ will have equivalent collision sequences as $\pi + \gamma \in [-\pi/2, \pi/2]$ (this will be clear once we present the tiling representation later in the paper). Moreover, any angle in the range $\gamma \in [0, \pi/2]$ will create equivalent collision sequences as those in $[-\pi/2, 0]$ by simply reflecting the square about one of its horizontal sides. Thus, for the rest of the paper, we will assume $\gamma \in [0, \pi/2]$.
-\end{itemize}
