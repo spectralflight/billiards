@@ -1,61 +1,50 @@
-In this paper we will explore sequences of billiard ball collisions. In particular, we look at the sequence of sides that a billiard ball collides with under perfect, frictionless conditions. We will show how a square billiard table can be analyzed by tiling the plane with the table, and prove a number of properties that billiard ball sequences must satisfy.
+%!TEX root = paper.tex
 
-This introduction will explain the general setup of the problem and will give an example of how the definitions relate to a billiard ball with particular initial conditions.
+The problem we will analyze in this paper is that of a billiard ball bouncing around inside a square billiard table in the absence of any external forces (e.g. gravity) and/or any dissipative forces (e.g. friction). Before delving into the analysis, we must first clarify the problem statement.
 
 \subsection{Setup}
 
-We will imagine an infinitesimally small billiard ball on a square table. For simplicity, we will assume that the square table is defined on the unit square $[0,1]^2$. The ball will start at some initial position $\bvec{x}_0$ inside of the table and with some velocity $\bvec{v}_0$. We will assume that the ball is massless and frictionless.
+The ball and table will be idealized in the following manner: we will represent the ball as a point moving around in $\R^2$ and the board as the unit square $[0,1]^2$. The ball will start with an initial position $\bvec{x}_0 \in [0,1]^2$ and initial velocity $\bvec{v}_0$. Because there are no external forces and/or dissipative forces, the speed of the ball will be constant throughout its trajectory, and thus only the direction of motion is important.
 
-We will assume ideal, elastic collisions. To be more precise, when the ball collides with an edge of the table, the ball's velocity will be reflected across the line perpendicular to the edge of the table at the point of collision. In other words, the angle of incidence is equal to the angle of reflection on all billiard ball collisions. Collisions at a corner of the square table are undefined and we assume that all trajectories we deal with in this paper will not collide with a corner. Figure \ref{fig:collision-angle} shows the general mechanics of a collision.
+Any time the position of the ball (point) coincides with the edge of the table (unit square), we will say that the ball collides with that edge of the table. During this collision, the ball is reflected off the edge of the table in such a manner that the outgoing velocity is a reflection of the incoming velocity across the line perpendicular to the edge of the table at the point of collision. In more technical terms, the angle of incidence is equal to the angle of reflection in all ball-table collisions. Collisions at corners of the table are undefined and so we will ignore any such trajectories. Figure \ref{fig:collision-angle} shows the general mechanics of a collision.
 
-\begin{figure}
-  \includegraphics[width=2in]{particle_collision.png}
-  \caption{\label{fig:collision-angle}Mechanics of a Billiard Ball Colliding with a Table Edge}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[keepaspectratio,width=2in]{particle_collision.png}
+  \end{center}
+  \vspace{-.2in} % corrects bad spacing
+  \caption{\label{fig:collision-angle}Mechanics of the ball colliding with a table edge.}
 \end{figure}
 
-Now, we will label the horizontal sides of the table $h$ and the vertical sides of the table $v$. Whenever the billiard ball collides with a horizontal side (labelled $h$), we will call the resulting collision an $h$-collision. Whenever the ball collides with a vertical side (labelled $v$), we will call the resulting collision a $v$-collision.
-
-We will now define what this paper will be primarily interested in, a sequence of collisions:
+Introducing some notation to the problem, we will label the horizontal edges of the table $h$ and the vertical edges of the table $v$. Whenever the ball collides with a horizontal edge, we will call the resulting collision an $h$ collision. Likewise, collisions with vertical edges will be denoted as $v$ collisions.
 
 \begin{definition}
-  A \emph{collision sequence} ($\alpha$) for a ball $B$ is the sequence of $v$'s and $h$'s which appear as the ball collides with the walls of the billiard table, ordered by the time at which the collisions occur.
+  A \emph{collision sequence} ($\alpha$) for a ball is the sequence of sides that the ball collides with ($\alpha_i \in {v, h}$). This sequence is ordered by increasing collision time. In this paper, ball trajectories are idealized and infinite, but we will only look at finite subsequences of the infinite collision sequences formed by these trajectories.
 \end{definition}
 
-Notice that all non-trivial initial conditions for a billiard ball will result in infinitely many $h$-collisions. The only initial conditions for which this is not true are the trivial initial conditions, i.e. when the initial velocity is parallel to the horizontal (for example when $\bvec{v}_0 = (1, 0)$) so that the ball bounces infinitely between the two vertical sides or when the initial velocity is parallel to the vertical (for example when $\bvec{v}_0 = (0, 1)$). The proof of this is trivial and should become clear once the tiling representation is presented, so we will omit it.
+\subsection{An Example Collision Sequence}
 
-Throughout this paper, we will constrain a ball's collision sequence to begin and end with an $h$. Thus, it is perfectly reasonable to constraint since one simply needs to extend the number of collisions one watches until the sequence of collisions begins and ends with an $h$-collision. This constraint will later make it easier to reason about properties of sequences.
+For the reader to better understand the basic properties of collision sequences, we will consider an example trajectory and form a collision sequence from a short segment of the trajectory. Consider a ball with initial position $\bvec{x}_0 = (0.75, 0.75)$ and initial velocity $\bvec{v}_0 = (0.23, 0.05)$.
 
-\subsection{Example Collision Sequence}
-
-To understand collision sequences better, we will provide an example. Consider a billiard ball with intial position $\bvec{x}_0 = (0.75, 0.75)$ and initial velocity $\bvec{v}_0 = (0.23, 0.05)$.
-
-\begin{figure}
-  \includegraphics[width=3in]{example.png}
-  \caption{\label{fig:example}Example Billiard Ball Trajectory, $x_0 = (0.75, 0.75)$, $v_0 = (0.23, 0.05)$}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[keepaspectratio,width=3in]{example.png}
+  \end{center}
+  \vspace{-.2in} % corrects bad spacing
+  \caption{\label{fig:example}Example trajectory, $x_0 = (0.75, 0.75)$, $v_0 = (0.23, 0.05)$.}
 \end{figure}
 
-We can see from the figure that the collisions that the ball makes, denoting a $v$-collision with a $v$ and an $h$-collision with an $h$, are:
-\begin{eqnarray}
-(v, h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v)
-\end{eqnarray}
+The collision sequence corresponding to this trajectory segment is the following:
 
-A valid collision sequence given these initial conditions would start and end with an $h$ collision. A possible example would be:
-
-\begin{eqnarray}
-  \alpha = ( h, v, v, v, v, v, h, v, v, v, v, v, h)
-\end{eqnarray}
-
-Notice that the collisions will continue infinitely, so one could imagine extending this collision sequence to include more $v$ and $h$ collisions. Although not shown in the picture, the following collision sequence would also be valid if one continued showing the trajectory of the ball from figure \ref{fig:example} in future collisions:
-
-\begin{eqnarray}
-  \alpha = (h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v, v, v, h)
-\end{eqnarray}
+\begin{equation}
+	\alpha = (v, h, v, v, v, v, v, h, v, v, v, v, v, h, v, v, v)
+\end{equation}
 
 \subsection{Simplifications}
 
-There are some simplifications that we can make which will make it easier to talk about billiard balls, their initial conditions, and their collision sequences.
+There are a few simplifications that we can make which will make it easier to talk about balls, their initial conditions, and their collision sequences.
 
 \begin{itemize}
-  \item We can change the magnitude of the initial velocity $\bvec{v}_0$ without changing any collision sequences. This is because only the direction of $\bvec{v}_0$ affects the points of collision. Thus, the only part of the initial velocity that we care about is the velocity's direction so we can characterize $\bvec{v}_0$ by the angle $\gamma$ that $\bvec{v}_0$ makes with the positive horizontal line (just like in polar coordinates). From now on, we will use $\bvec{v}_0$ and $\gamma$ interchangeably.
-  \item We can constrain the initial velocity's angle to the range $\gamma \in [0, \pi/2]$. This is because any intial velocity with an angle in the range $\gamma \in [\pi/2, 3\pi/2]$ will have equivalent collision sequences as $\pi + \gamma \in [-\pi/2, \pi/2]$ (this will be clear once we present the tiling representation later in the paper). Moreover, any angle in the range $\gamma \in [0, \pi/2]$ will create equivalent collision sequences as those in $[-\pi/2, 0]$ by simply reflecting the square about one of its horizontal sides. Thus, for the rest of the paper, we will assume $\gamma \in [0, \pi/2]$.
+  \item Only the direction of $\bvec{v}_0$ affects the trajectory shape, so from now on, $v_0$ will refer to the initial trajectory
+  \item We can constrain the initial velocity's angle to the range $\gamma \in [0, \pi/2]$. This is because any initial velocity with an angle in the range $\gamma \in [\pi/2, 3\pi/2]$ will have equivalent collision sequences as $\pi + \gamma \in [-\pi/2, \pi/2]$ (this will be clear once we present the tiling representation later in the paper). Moreover, any angle in the range $\gamma \in [0, \pi/2]$ will create equivalent collision sequences as those in $[-\pi/2, 0]$ by simply reflecting the square about one of its horizontal sides. Thus, for the rest of the paper, we will assume $\gamma \in [0, \pi/2]$.
 \end{itemize}
